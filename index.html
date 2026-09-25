@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mannin Systems | Production software for small manufacturers, Isle of Man</title>
+<meta name="description" content="Bespoke production and MRP software for small extruders, fabricators and light engineering firms still running on spreadsheets. Based in the Isle of Man.">
+<link rel="canonical" href="https://manninsystems.co.uk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mannin Systems">
+<meta property="og:description" content="Bespoke production software for small manufacturers who've outgrown the spreadsheet. Based in the Isle of Man.">
+<meta property="og:url" content="https://manninsystems.co.uk/">
+<meta name="theme-color" content="#F3F5F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141B22" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231C2530'/%3E%3Cpath fill='%23E0A21B' fill-rule='evenodd' d='M6 9h20v14H6z M9 12v8h6v-8z M17 12v8h6v-8z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F4;
+    --sheet: #FBFCFC;
+    --surface: #E6ECEB;
+    --ink: #1C2530;
+    --steel: #53636F;
+    --rule: #CBD3D6;
+    --grid: rgba(31, 95, 107, 0.07);
+    --gorse: #E0A21B;
+    --sea: #1F5F6B;
+    --on-gorse: #1C2530;
+    --band-bg: #1C2530;
+    --band-fg: #F3F5F4;
+    --band-muted: #A9B6BF;
+    --shadow: 0 1px 0 rgba(28, 37, 48, 0.04), 0 24px 48px -28px rgba(28, 37, 48, 0.38);
+    --wrap: 72rem;
+    --gutter: clamp(1.25rem, 5vw, 3rem);
+    box-sizing: border-box;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #141B22; --sheet: #19222B; --surface: #1A232C;
+      --ink: #E6ECEE; --steel: #9AA9B3; --rule: #2C3843;
+      --grid: rgba(124, 186, 197, 0.07);
+      --gorse: #F0B43A; --sea: #7CBAC5;
+      --band-bg: #0E1419; --band-fg: #E6ECEE; --band-muted: #9AA9B3;
+      --shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 24px 48px -28px rgba(0, 0, 0, 0.7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #141B22; --sheet: #19222B; --surface: #1A232C;
+    --ink: #E6ECEE; --steel: #9AA9B3; --rule: #2C3843;
+    --grid: rgba(124, 186, 197, 0.07);
+    --gorse: #F0B43A; --sea: #7CBAC5;
+    --band-bg: #0E1419; --band-fg: #E6ECEE; --band-muted: #9AA9B3;
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 24px 48px -28px rgba(0, 0, 0, 0.7);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px)); }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img, svg { max-width: 100%; height: auto; }
+  a { color: var(--sea); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 3px solid var(--sea); outline-offset: 3px; border-radius: 3px; }
+  p { margin: 0 0 1rem; max-width: 38em; }
+  .wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+
+  /* Header */
+  .site-head {
+    position: sticky; top: 0; z-index: 10;
+    padding-top: env(safe-area-inset-top, 0px);
+    background: color-mix(in srgb, var(--paper) 86%, transparent);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px);
+    backdrop-filter: saturate(1.4) blur(12px);
+    border-bottom: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
+  }
+  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; }
+  .brand {
+    display: inline-flex; align-items: center; gap: 0.65rem;
+    color: var(--ink); text-decoration: none;
+    font-weight: 760; font-stretch: 118%; font-size: 1.1rem; letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .brand svg { width: 1.85rem; height: 1.85rem; flex: none; }
+  .head-link {
+    font-weight: 650; font-size: 0.95rem; text-decoration: none;
+    color: var(--ink); padding: 0.5rem 0.9rem; border: 1px solid var(--rule); border-radius: 999px;
+    background: var(--sheet); white-space: nowrap;
+  }
+  @media (max-width: 26rem) { .brand { font-size: 1rem; font-stretch: 108%; } .head-link { font-size: 0.875rem; padding: 0.45rem 0.75rem; } }
+  .head-link:hover { border-color: var(--ink); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--gorse); color: var(--on-gorse);
+    padding: 0.9rem 1.4rem; border-radius: 6px;
+    font-weight: 720; font-stretch: 110%; text-decoration: none;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.14), 0 8px 18px -10px rgba(160, 110, 0, 0.7);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .btn:hover { transform: translateY(-1px); text-decoration: none; }
+  .btn:active { transform: translateY(0); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.14); }
+  .btn:focus-visible { outline: 3px solid var(--sea); outline-offset: 3px; }
+  .btn svg { width: 1.1rem; height: 1.1rem; }
+
+  /* Hero */
+  .hero { padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(3.5rem, 8vw, 6.5rem); }
+  .hero .wrap { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 62rem) { .hero .wrap { grid-template-columns: 1.05fr 0.95fr; } }
+  h1 {
+    margin: 0 0 1.35rem;
+    font-size: clamp(2.15rem, 1.1rem + 3.3vw, 3.7rem);
+    line-height: 1.03;
+    font-weight: 790;
+    font-stretch: 118%;
+    letter-spacing: -0.02em;
+    max-width: 13.5em;
+    text-wrap: balance;
+  }
+  .lede { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.25rem); line-height: 1.55; color: var(--steel); max-width: 31em; margin-bottom: 2rem; }
+  .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.4rem; }
+  .where { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--steel); font-size: 0.975rem; }
+  .where svg { width: 1rem; height: 1rem; }
+
+  /* Drawing sheet */
+  .sheet {
+    margin: 0;
+    background-color: var(--sheet);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 22px 22px;
+    background-position: -1px -1px;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: clamp(1rem, 3vw, 1.75rem) clamp(1rem, 3vw, 1.75rem) 8px;
+    position: relative;
+  }
+  .sheet::before {
+    content: ""; position: absolute; inset: 8px; border: 1px solid var(--rule); border-radius: 5px; pointer-events: none;
+  }
+  .sheet svg { display: block; width: 100%; max-width: 27rem; margin-inline: auto; position: relative; }
+  .d-fill { fill: url(#hatch); }
+  .hatch-line { stroke: var(--steel); stroke-width: 1.1; opacity: 0.5; }
+  .d-outline { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linejoin: miter; }
+  .d-centre { stroke: var(--steel); stroke-width: 0.9; stroke-dasharray: 10 3 2 3; opacity: 0.7; }
+  .d-dim { stroke: var(--sea); stroke-width: 1.2; fill: none; }
+  .d-ext { stroke: var(--sea); stroke-width: 1; opacity: 0.65; }
+  .d-arrow { fill: var(--sea); }
+  .d-text { fill: var(--sea); font-size: 15px; font-weight: 650; font-family: inherit; font-variant-numeric: tabular-nums; }
+  .d-leader { stroke: var(--ink); stroke-width: 1.2; fill: none; }
+  .d-dot { fill: var(--ink); }
+  .d-balloon { fill: var(--gorse); stroke: var(--ink); stroke-width: 1.4; }
+  .d-num { fill: var(--on-gorse); font-size: 14px; font-weight: 780; font-family: inherit; }
+  .key {
+    list-style: none; margin: 0.75rem 0 0; padding: 0 0.25rem;
+    display: grid; gap: 0.55rem; font-size: 0.95rem; position: relative;
+  }
+  .key li { display: flex; gap: 0.7rem; align-items: center; }
+  .key b {
+    flex: none; display: inline-grid; place-items: center;
+    width: 1.45rem; height: 1.45rem; border-radius: 50%;
+    background: var(--gorse); color: var(--on-gorse); border: 1.4px solid var(--ink);
+    font-size: 0.78rem; font-weight: 780; line-height: 1;
+  }
+  .key span { color: var(--steel); line-height: 1.35; }
+  .key strong { color: var(--ink); font-weight: 680; }
+  .title-block {
+    position: relative;
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    margin: 1.25rem calc(8px - clamp(1rem, 3vw, 1.75rem)) 0;
+    margin-bottom: 1px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.72rem; line-height: 1.3; color: var(--steel);
+    background: color-mix(in srgb, var(--sheet) 80%, transparent);
+    border-radius: 0 0 5px 5px;
+  }
+  .title-block div { padding: 0.6rem 0.9rem 0.75rem; }
+  .title-block div + div { border-left: 1px solid var(--rule); }
+  .title-block small { display: block; font-size: 0.68rem; opacity: 0.85; }
+  .title-block span { display: block; color: var(--ink); font-weight: 650; font-size: 0.8rem; font-stretch: 108%; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .d-outline { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.2s cubic-bezier(.4,0,.2,1) 0.25s forwards; }
+    .d-fill, .d-notes { opacity: 0; animation: fade 0.6s ease-out forwards; }
+    .d-fill { animation-delay: 1.2s; }
+    .d-notes { animation-delay: 1.5s; }
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fade { to { opacity: 1; } }
+
+  /* Sections */
+  .section { padding-block: clamp(4rem, 9vw, 7rem); }
+  .section.alt { background: var(--surface); }
+  .section-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
+  h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.7rem, 1rem + 2.3vw, 2.6rem);
+    line-height: 1.06;
+    font-weight: 760;
+    font-stretch: 116%;
+    letter-spacing: -0.018em;
+    max-width: 18em;
+    text-wrap: balance;
+  }
+  h3 { margin: 0 0 0.35rem; font-size: 1.12rem; line-height: 1.3; font-weight: 720; font-stretch: 110%; letter-spacing: -0.005em; }
+  .muted { color: var(--steel); }
+  .section-head p { font-size: 1.125rem; margin: 0; }
+
+  /* Pains */
+  .pain-grid { display: grid; gap: 2rem 4rem; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 56rem) { .pain-grid { grid-template-columns: 0.8fr 1.2fr; } }
+  .pains { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .pains li {
+    position: relative; padding: 1rem 0 1rem 2rem; font-size: 1.125rem; line-height: 1.5;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pains li::before {
+    content: ""; position: absolute; left: 0; top: 1.62rem;
+    width: 0.9rem; height: 0.5rem; background: var(--gorse); border-radius: 1px;
+  }
+  .pain-note { margin-top: 1.5rem; font-size: 1.05rem; }
+
+  /* Covers */
+  .covers { display: grid; gap: 2.5rem 3rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+  .cover { display: grid; grid-template-columns: 2.75rem 1fr; gap: 0 1rem; align-items: start; }
+  .icon {
+    width: 2.75rem; height: 2.75rem; border-radius: 8px;
+    display: grid; place-items: center;
+    background: var(--sheet); border: 1px solid var(--rule);
+  }
+  .icon svg { width: 1.45rem; height: 1.45rem; fill: none; stroke: var(--sea); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .cover p { margin: 0; color: var(--steel); }
+
+  /* About */
+  .about { display: grid; gap: 1.5rem 4rem; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 56rem) { .about { grid-template-columns: 0.85fr 1.15fr; } }
+  .about .big { font-size: clamp(1.2rem, 1rem + 0.7vw, 1.45rem); line-height: 1.5; color: var(--ink); font-weight: 450; }
+  .about p { font-size: 1.1rem; }
+  .sign { display: flex; align-items: center; gap: 0.85rem; margin-top: 1.5rem; }
+  .sign .mono {
+    width: 2.75rem; height: 2.75rem; border-radius: 50%; display: grid; place-items: center;
+    background: var(--ink); color: var(--paper); font-weight: 780; font-stretch: 115%;
+  }
+  .sign strong { display: block; font-weight: 700; line-height: 1.2; }
+  .sign span { color: var(--steel); font-size: 0.95rem; }
+
+  /* Steps */
+  .steps {
+    list-style: none; margin: 0; padding: 0; counter-reset: step;
+    display: grid; gap: 2.25rem 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  }
+  .steps li { counter-increment: step; position: relative; border-top: 2px solid var(--rule); padding-top: 1.25rem; }
+  .steps li::after { content: ""; position: absolute; top: -2px; left: 0; width: 2.75rem; height: 2px; background: var(--gorse); }
+  .steps li::before {
+    content: counter(step);
+    display: block; margin-bottom: 0.6rem;
+    font-size: 2.4rem; line-height: 1; font-weight: 800; font-stretch: 125%;
+    color: var(--sea); font-variant-numeric: tabular-nums;
+  }
+  .steps p { margin: 0; color: var(--steel); }
+
+  /* Pricing */
+  .price {
+    display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+    box-shadow: var(--shadow); max-width: 54rem;
+  }
+  .price > div { background: var(--sheet); padding: clamp(1.5rem, 3vw, 2rem); }
+  .price small { display: block; color: var(--steel); font-size: 0.9rem; margin-bottom: 0.35rem; }
+  .price h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+  .price p { margin: 0; color: var(--steel); }
+
+  /* Contact */
+  .contact {
+    background-color: var(--band-bg); color: var(--band-fg);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .contact h2 { color: var(--band-fg); }
+  .contact p { color: var(--band-muted); font-size: 1.125rem; }
+  .mail {
+    display: inline-block; margin: 0.75rem 0 2rem;
+    color: var(--gorse); font-weight: 760;
+    font-size: clamp(1.1rem, 0.5rem + 2.8vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em;
+    overflow-wrap: anywhere; text-decoration-thickness: 2px;
+  }
+  .contact a:focus-visible, .contact .btn:focus-visible { outline-color: var(--gorse); }
+
+  .site-foot { background: var(--band-bg); color: var(--band-muted); font-size: 0.9rem; padding-block: 1.5rem 2rem; border-top: 1px solid rgba(255,255,255,0.08); }
+  .site-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; }
+  .site-foot p { margin: 0; }
+  .site-foot a { color: var(--band-fg); }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Mannin Systems, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1C2530"/><path fill="#E0A21B" fill-rule="evenodd" d="M6 9h20v14H6z M9 12v8h6v-8z M17 12v8h6v-8z"/></svg>
+      Mannin Systems
+    </a>
+    <a class="head-link" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Production software for manufacturers who've outgrown the spreadsheet</h1>
+        <p class="lede">Simple, bespoke MRP systems for small extruders, fabricators and light engineering firms. Orders, materials, recipes, tooling and stock, set up around the way your shop already works.</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:chris@manninsystems.co.uk">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+            Email Chris
+          </a>
+          <span class="where">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
+            Based in the Isle of Man
+          </span>
+        </div>
+      </div>
+
+      <figure class="sheet">
+        <svg viewBox="0 0 400 345" role="img" aria-labelledby="dwg-title">
+          <title id="dwg-title">Technical drawing of an extruded profile, annotated with its recipe, die and job details</title>
+          <defs>
+            <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="7" class="hatch-line"/>
+            </pattern>
+            <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 1 L10 5 L0 9 z" class="d-arrow"/>
+            </marker>
+          </defs>
+
+          <path class="d-fill" fill-rule="evenodd" d="M90 110 H310 V255 H350 V270 H90 Z M110 130 V250 H192 V130 Z M208 130 V250 H290 V130 Z"/>
+          <path class="d-outline" pathLength="1" d="M90 110 H310 V255 H350 V270 H90 Z M110 130 V250 H192 V130 Z M208 130 V250 H290 V130 Z"/>
+
+          <g class="d-notes">
+            <path class="d-centre" d="M200 96 V284"/>
+            <path class="d-ext" d="M90 104 V62 M310 104 V62"/>
+            <path class="d-dim" d="M91 72 H309" marker-start="url(#arr)" marker-end="url(#arr)"/>
+            <text class="d-text" x="200" y="64" text-anchor="middle">220</text>
+            <path class="d-ext" d="M84 110 H36 M84 270 H36"/>
+            <path class="d-dim" d="M46 111 V269" marker-start="url(#arr)" marker-end="url(#arr)"/>
+            <text class="d-text" x="36" y="190" text-anchor="middle" transform="rotate(-90 36 190)">160</text>
+
+            <path class="d-leader" d="M80 311 L100 263"/>
+            <circle class="d-dot" cx="100" cy="263" r="3"/>
+            <circle class="d-balloon" cx="74" cy="324" r="14"/>
+            <text class="d-num" x="74" y="329" text-anchor="middle">1</text>
+
+            <path class="d-leader" d="M350 60 L301 118"/>
+            <circle class="d-dot" cx="301" cy="118" r="3"/>
+            <circle class="d-balloon" cx="360" cy="48" r="14"/>
+            <text class="d-num" x="360" y="53" text-anchor="middle">2</text>
+
+            <path class="d-leader" d="M358 311 L338 264"/>
+            <circle class="d-dot" cx="338" cy="264" r="3"/>
+            <circle class="d-balloon" cx="364" cy="324" r="14"/>
+            <text class="d-num" x="364" y="329" text-anchor="middle">3</text>
+          </g>
+        </svg>
+        <figcaption>
+          <ol class="key">
+            <li><b aria-hidden="true">1</b><span><strong>Material:</strong> recipe R-17 with 20% regrind</span></li>
+            <li><b aria-hidden="true">2</b><span><strong>Die D-042:</strong> 38 runs since its last polish</span></li>
+            <li><b aria-hidden="true">3</b><span><strong>Job 1042:</strong> 1,200 m, due Friday</span></li>
+          </ol>
+          <div class="title-block" aria-hidden="true">
+            <div><small>Title</small><span>Twin-chamber profile</span></div>
+            <div><small>Scale</small><span>1:1</span></div>
+            <div><small>Sheet</small><span>1 of 1</span></div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap pain-grid">
+      <div>
+        <h2>Sound familiar?</h2>
+        <p class="muted">The big-name systems are priced and built for large plants. Mannin Systems is for everyone else.</p>
+      </div>
+      <ul class="pains">
+        <li>The production plan lives on a whiteboard, or in one person's head.</li>
+        <li>There's a spreadsheet only one person understands, and everyone is wary of touching it.</li>
+        <li>Nobody is quite sure how much material, or regrind, is really in stock.</li>
+        <li>Tooling history is whatever someone remembers about the last run.</li>
+        <li>Off-the-shelf software was built for someone else's factory, and it shows.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What your system can cover</h2>
+        <p class="muted">Each system is built for one business, so it covers what you need and leaves out what you don't. Typical areas include:</p>
+      </div>
+      <div class="covers">
+        <div class="cover">
+          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="1.5"/><path d="M9 4V2.8h6V4M8.5 9.5h7M8.5 13h7M8.5 16.5h4"/></svg></span>
+          <div><h3>Orders and scheduling</h3><p>Customer orders turned into jobs, with a clear view of what's running, what's next and what's late.</p></div>
+        </div>
+        <div class="cover">
+          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l-6 8v5l-4 3v-8z"/></svg></span>
+          <div><h3>Materials and recipes</h3><p>Blends, masterbatch and regrind ratios for each product, with material usage worked out per job.</p></div>
+        </div>
+        <div class="cover">
+          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="1"/><path d="M7 9.5h4.2v5H7zM12.8 9.5H17v5h-4.2z"/></svg></span>
+          <div><h3>Tooling</h3><p>Dies, moulds and fixtures: where they are, what they've run and when they're due for maintenance.</p></div>
+        </div>
+        <div class="cover">
+          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5h8v7h-8zM12.5 12.5h8v7h-8zM8 4.5h8v8H8z"/></svg></span>
+          <div><h3>Stock</h3><p>Raw material, work in progress and finished goods, updated as work is booked rather than at month end.</p></div>
+        </div>
+        <div class="cover">
+          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="6" r="2"/><circle cx="18.5" cy="12" r="2"/><circle cx="5.5" cy="18" r="2"/><path d="M7.5 6h4v6h5M11.5 12v6h-4"/></svg></span>
+          <div><h3>Traceability</h3><p>Which batch of material went into which job, for when a customer comes back with a question.</p></div>
+        </div>
+        <div class="cover">
+          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5h17M6.5 20.5v-6M11 20.5v-11M15.5 20.5v-4M19.5 20.5v-15"/></svg></span>
+          <div><h3>Reporting</h3><p>Output, scrap and downtime in plain figures you can act on.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap about">
+      <h2>Built by someone from the shop floor</h2>
+      <div>
+        <p class="big">I know what a changeover costs, why regrind ratios matter, and how much of a factory runs on knowledge that was never written down.</p>
+        <p class="muted">My background is in extrusion manufacturing, process improvement and development, not software sales. That means less time explaining your business to me, and a system that uses your names for your products and processes.</p>
+        <div class="sign">
+          <span class="mono" aria-hidden="true">C</span>
+          <div><strong>Chris</strong><span>Founder, Mannin Systems</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p class="muted">No big-bang switchover. You keep working the way you do now until the new system has proved itself.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Talk it through</h3><p>A call or a visit to see how you work now: orders, materials, the spreadsheets and the whiteboard.</p></li>
+        <li><h3>Start with one process</h3><p>We pick the area causing the most trouble and build that first, around your products and your terms.</p></li>
+        <li><h3>Run it side by side</h3><p>The new system runs alongside your spreadsheets until you trust the numbers.</p></li>
+        <li><h3>Switch over</h3><p>Then you move across, with support on hand and room to add more areas when you're ready.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What it costs</h2>
+        <p class="muted">Straightforward pricing, agreed in writing before any work starts.</p>
+      </div>
+      <div class="price">
+        <div>
+          <small>Up front</small>
+          <h3>Design and set-up</h3>
+          <p>A fixed price for building your system, based on what we agree it needs to cover.</p>
+        </div>
+        <div>
+          <small>Monthly</small>
+          <h3>Hosting and support</h3>
+          <p>Secure hosting, backups and support, so the system keeps running without you having to think about it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <h2>Tell me what you're running on now</h2>
+      <p>A few lines about what you make and how you plan production today is plenty to start with. I'll reply personally.</p>
+      <a class="mail" href="mailto:chris@manninsystems.co.uk">chris@manninsystems.co.uk</a>
+      <div>
+        <a class="btn" href="mailto:chris@manninsystems.co.uk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+          Email Chris
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p>&copy; 2026 Mannin Systems, Isle of Man</p>
+    <p><a href="mailto:chris@manninsystems.co.uk">chris@manninsystems.co.uk</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

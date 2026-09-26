@@ -312,6 +312,18 @@
   .pains li::before { background: var(--manx); box-shadow: 5px 0.3rem 0 0 var(--manx), 10px 0 0 0 var(--manx); }
   .try svg { stroke: var(--manx); }
   ::selection { background: color-mix(in srgb, var(--manx) 22%, transparent); }
+
+  /* MRP general-arrangement drawing */
+  .p-face { fill: var(--sheet); }
+  .p-side { fill: var(--paper); }
+  .p-side.p-shade { fill: var(--mist); }
+  .p-side-h { fill: url(#hatch); }
+  .p-feat { fill: none; stroke: var(--steel); stroke-width: 0.8; }
+  .p-feat * { vector-effect: non-scaling-stroke; }
+  .d-proj { stroke: var(--silver); stroke-width: 0.6; stroke-dasharray: 4 3; fill: none; }
+  .d-textbg { fill: var(--sheet); }
+  .sheet .title-block { grid-template-columns: 1.3fr 1.5fr 0.7fr; }
+  @media (prefers-reduced-motion: no-preference) { .p-body { opacity: 0; animation: fade 0.7s ease-out 1.3s forwards; } }
 </style>
 <script type="application/ld+json">
 {
@@ -348,39 +360,53 @@
       </div>
 
       <figure class="sheet">
-        <svg viewBox="0 0 400 345" role="img" aria-labelledby="dwg-title">
-          <title id="dwg-title">Technical drawing of an extruded profile, annotated with its recipe, die and job details</title>
+        <svg viewBox="0 0 400 392" role="img" aria-labelledby="dwg-title">
+          <title id="dwg-title">Exploded technical drawing of a production system: orders, recipes and BOMs, a line board and a stock ledger, stacked on one axis</title>
           <defs>
             <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="hatch-line"/></pattern>
             <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1.5 L10 5 L0 8.5 z" class="d-arrow"/></marker>
           </defs>
-          <path class="d-fill" fill-rule="evenodd" d="M90 110 H310 V255 H350 V270 H90 Z M110 130 V250 H192 V130 Z M208 130 V250 H290 V130 Z"/>
-          <path class="d-outline" pathLength="1" d="M90 110 H310 V255 H350 V270 H90 Z M110 130 V250 H192 V130 Z M208 130 V250 H290 V130 Z"/>
           <g class="d-notes">
-            <path class="d-centre" d="M200 96 V284 M76 190 H324"/>
-            <path class="d-ext" d="M90 104 V62 M310 104 V62"/>
-            <path class="d-dim" d="M91 72 H309" marker-start="url(#arr)" marker-end="url(#arr)"/>
-            <text class="d-text" x="200" y="64" text-anchor="middle">220</text>
-            <path class="d-ext" d="M84 110 H36 M84 270 H36"/>
-            <path class="d-dim" d="M46 111 V269" marker-start="url(#arr)" marker-end="url(#arr)"/>
-            <text class="d-text" x="36" y="190" text-anchor="middle" transform="rotate(-90 36 190)">160</text>
-            <path class="d-leader" d="M81 312 L100 263"/><circle class="d-dot" cx="100" cy="263" r="2.2"/>
-            <circle class="d-balloon" cx="75" cy="325" r="13"/><text class="d-num" x="75" y="329.5" text-anchor="middle">1</text>
-            <path class="d-leader" d="M351 58 L301 118"/><circle class="d-dot" cx="301" cy="118" r="2.2"/>
-            <circle class="d-balloon" cx="360" cy="48" r="13"/><text class="d-num" x="360" y="52.5" text-anchor="middle">2</text>
-            <path class="d-leader" d="M357 312 L338 264"/><circle class="d-dot" cx="338" cy="264" r="2.2"/>
-            <circle class="d-balloon" cx="363" cy="325" r="13"/><text class="d-num" x="363" y="329.5" text-anchor="middle">3</text>
+          <path class="d-centre" d="M200 6 V366"/>
+          <path class="d-proj" d="M88 60 V300 M312 60 V300 M200 116 V346"/>
+          </g>
+          <g class="p-body"><path class="p-face" d="M88.0 300.0 L200.0 254.0 L312.0 300.0 L200.0 346.0 Z"/><path class="p-side-h" d="M88.0 300.0 L200.0 346.0 L200.0 356.0 L88.0 310.0 Z"/><path class="p-side-h p-shade" d="M200.0 346.0 L312.0 300.0 L312.0 310.0 L200.0 356.0 Z"/></g>
+          <path class="d-outline" pathLength="1" d="M88.0 300.0 L200.0 254.0 L312.0 300.0 L312.0 310.0 L200.0 356.0 L88.0 310.0 Z M88.0 300.0 L200.0 346.0 L312.0 300.0 M200.0 346.0 V356.0"/>
+          <g class="d-notes p-feat" transform="matrix(1.120 0.460 -1.120 0.460 200 254)"><path d="M10 20 H90 M10 32 H90 M10 44 H90 M10 56 H90 M10 68 H90 M10 80 H90 M30 12 V88"/></g>
+          <g class="p-body"><path class="p-face" d="M88.0 220.0 L200.0 174.0 L312.0 220.0 L200.0 266.0 Z"/><path class="p-side" d="M88.0 220.0 L200.0 266.0 L200.0 276.0 L88.0 230.0 Z"/><path class="p-side p-shade" d="M200.0 266.0 L312.0 220.0 L312.0 230.0 L200.0 276.0 Z"/></g>
+          <path class="d-outline" pathLength="1" d="M88.0 220.0 L200.0 174.0 L312.0 220.0 L312.0 230.0 L200.0 276.0 L88.0 230.0 Z M88.0 220.0 L200.0 266.0 L312.0 220.0 M200.0 266.0 V276.0"/>
+          <g class="d-notes p-feat" transform="matrix(1.120 0.460 -1.120 0.460 200 174)"><path d="M10 25 H90 M10 50 H90 M10 75 H90"/><rect x="14" y="17" width="30" height="16"/><rect x="50" y="17" width="22" height="16"/><rect x="24" y="42" width="40" height="16"/><rect x="14" y="67" width="18" height="16"/><rect x="38" y="67" width="44" height="16"/></g>
+          <g class="p-body"><path class="p-face" d="M88.0 140.0 L200.0 94.0 L312.0 140.0 L200.0 186.0 Z"/><path class="p-side" d="M88.0 140.0 L200.0 186.0 L200.0 196.0 L88.0 150.0 Z"/><path class="p-side p-shade" d="M200.0 186.0 L312.0 140.0 L312.0 150.0 L200.0 196.0 Z"/></g>
+          <path class="d-outline" pathLength="1" d="M88.0 140.0 L200.0 94.0 L312.0 140.0 L312.0 150.0 L200.0 196.0 L88.0 150.0 Z M88.0 140.0 L200.0 186.0 L312.0 140.0 M200.0 186.0 V196.0"/>
+          <g class="d-notes p-feat" transform="matrix(1.120 0.460 -1.120 0.460 200 94)"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="11"/><circle cx="50" cy="26" r="3"/><circle cx="74" cy="50" r="3"/><circle cx="50" cy="74" r="3"/><circle cx="26" cy="50" r="3"/></g>
+          <g class="p-body"><path class="p-face" d="M88.0 60.0 L200.0 14.0 L312.0 60.0 L200.0 106.0 Z"/><path class="p-side" d="M88.0 60.0 L200.0 106.0 L200.0 116.0 L88.0 70.0 Z"/><path class="p-side p-shade" d="M200.0 106.0 L312.0 60.0 L312.0 70.0 L200.0 116.0 Z"/></g>
+          <path class="d-outline" pathLength="1" d="M88.0 60.0 L200.0 14.0 L312.0 60.0 L312.0 70.0 L200.0 116.0 L88.0 70.0 Z M88.0 60.0 L200.0 106.0 L312.0 60.0 M200.0 106.0 V116.0"/>
+          <g class="d-notes p-feat" transform="matrix(1.120 0.460 -1.120 0.460 200 14)"><rect x="14" y="14" width="72" height="16"/><rect x="14" y="42" width="72" height="16"/><rect x="14" y="70" width="46" height="16"/></g>
+          <g class="d-notes">
+          <path class="d-leader" d="M353.6 36.0 L265.0 64.6"/><circle class="d-dot" cx="265.0" cy="64.6" r="2.2"/>
+          <circle class="d-balloon" cx="366" cy="32" r="13"/><text class="d-num" x="366" y="36.5" text-anchor="middle">1</text>
+          <path class="d-leader" d="M46.7 120.8 L130.6 139.1"/><circle class="d-dot" cx="130.6" cy="139.1" r="2.2"/>
+          <circle class="d-balloon" cx="34" cy="118" r="13"/><text class="d-num" x="34" y="122.5" text-anchor="middle">2</text>
+          <path class="d-leader" d="M353.5 199.5 L265.0 224.6"/><circle class="d-dot" cx="265.0" cy="224.6" r="2.2"/>
+          <circle class="d-balloon" cx="366" cy="196" r="13"/><text class="d-num" x="366" y="200.5" text-anchor="middle">3</text>
+          <path class="d-leader" d="M46.7 280.8 L130.6 299.1"/><circle class="d-dot" cx="130.6" cy="299.1" r="2.2"/>
+          <circle class="d-balloon" cx="34" cy="278" r="13"/><text class="d-num" x="34" y="282.5" text-anchor="middle">4</text>
+          <path class="d-ext" d="M88 314 V384 M312 314 V384"/>
+          <path class="d-dim" d="M89 378 H311" marker-start="url(#arr)" marker-end="url(#arr)"/>
+          <rect class="d-textbg" x="162" y="369" width="76" height="16"/>
+          <text class="d-text" x="200" y="382" text-anchor="middle">Your shop</text>
           </g>
         </svg>
         <figcaption>
           <ol class="key">
-            <li><b aria-hidden="true">1</b><span><strong>Material:</strong> recipe R-17 with 20% regrind</span></li>
-            <li><b aria-hidden="true">2</b><span><strong>Die D-042:</strong> 38 runs since its last polish</span></li>
-            <li><b aria-hidden="true">3</b><span><strong>Job 1042:</strong> 1,200 m, due Friday</span></li>
+            <li><b aria-hidden="true">1</b><span><strong>Orders:</strong> metres, kilos or pieces</span></li>
+            <li><b aria-hidden="true">2</b><span><strong>Recipes and BOMs:</strong> versioned, with regrind limits</span></li>
+            <li><b aria-hidden="true">3</b><span><strong>Line board:</strong> what's running and what's next</span></li>
+            <li><b aria-hidden="true">4</b><span><strong>Stock ledger:</strong> one source of truth</span></li>
           </ol>
           <div class="title-block" aria-hidden="true">
-            <div><small>Title</small><span>Twin-chamber profile</span></div>
-            <div><small>Scale</small><span>1:1</span></div>
+            <div><small>Title</small><span>Your production system</span></div>
+            <div><small>Rev</small><span>B: replaces the spreadsheet</span></div>
             <div><small>Sheet</small><span>1 of 1</span></div>
           </div>
         </figcaption>

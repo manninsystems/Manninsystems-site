@@ -324,6 +324,12 @@
   .d-textbg { fill: var(--sheet); }
   .sheet .title-block { grid-template-columns: 1.3fr 1.5fr 0.7fr; }
   @media (prefers-reduced-motion: no-preference) { .p-body { opacity: 0; animation: fade 0.7s ease-out 1.3s forwards; } }
+
+  /* Creed, set as a general note on a drawing */
+  .gen-note { display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; align-items: start; margin: 2rem 0; padding: 1.4rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); max-width: 34em; }
+  .gen-no { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; margin-top: 0.15rem; border-radius: 50%; border: 1.5px solid var(--manx); color: var(--manx); font-weight: 500; font-size: 1rem; }
+  .gen-note small { display: block; color: var(--steel); font-size: 0.85rem; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
+  .gen-note p { margin: 0; font-size: clamp(1.6rem, 1.15rem + 1.5vw, 2.3rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; color: var(--sea); text-wrap: balance; }
 </style>
 <script type="application/ld+json">
 {
@@ -557,12 +563,17 @@
     </div>
   </section>
 
-  <section class="section alt">
+  <section class="section alt" id="about">
     <div class="wrap split about">
-      <h2>Built by someone from the shop floor</h2>
+      <h2>Built by an engineer, not a software house</h2>
       <div>
-        <p class="big">I know what a changeover costs, why regrind ratios matter, and how much of a factory runs on knowledge that was never written down.</p>
-        <p class="muted">My background is in extrusion manufacturing, process improvement and development, not software sales. That means less time explaining your business to me, and a system that uses your names for your products and processes.</p>
+        <p class="big">I've spent my career in manufacturing, on the receiving end of MRP, WMS and ERP systems that were bought to help and ended up getting in the way.</p>
+        <p class="muted">My background is extrusion, process improvement and development, so Mannin Systems starts from the shop floor rather than the software. Fewer screens, fewer clicks, your names for your products, and nothing that slows a line down. I know what a changeover costs, why regrind ratios matter, and how much of a factory runs on knowledge that was never written down.</p>
+        <div class="gen-note">
+          <span class="gen-no" aria-hidden="true">1</span>
+          <div><small>General note</small><p>If it's not helping, it's hindering.</p></div>
+        </div>
+        <p class="muted">The same goes for compliance. Traceability and ISO records should come out of the way you already work, not sit on top of it as extra paperwork. Log it once, where it happens, and the audit trail builds itself, without costing you output.</p>
         <div class="sign"><span class="mono" aria-hidden="true">C</span><div><strong>Chris</strong><span>Founder, Mannin Systems</span></div></div>
       </div>
     </div>

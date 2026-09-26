@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mannin Systems | Production software for small manufacturers, Isle of Man</title>
-<meta name="description" content="Bespoke production and MRP software for small extruders, fabricators and light engineering firms still running on spreadsheets. Based in the Isle of Man.">
-<link rel="canonical" href="https://manninsystems.co.uk/">
+<title>Production software for small extruders | Mannin Systems</title>
+<meta name="description" content="Bespoke MRP for small plastic and PVC extruders: recipes and regrind, die maintenance, metres and kilos, co-ex scrap and full traceability. Isle of Man and UK.">
+<link rel="canonical" href="https://manninsystems.co.uk/extruders">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Mannin Systems">
+<meta property="og:title" content="Production software for small extruders">
 <meta property="og:description" content="Bespoke production software for small manufacturers who've outgrown the spreadsheet. Based in the Isle of Man.">
-<meta property="og:url" content="https://manninsystems.co.uk/">
+<meta property="og:url" content="https://manninsystems.co.uk/extruders">
 <meta name="theme-color" content="#F2F5F4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E2224" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23F2F5F4%22/%3E%3Cpath d=%22M55 8.299 A42 42 0 1 1 45 8.299 L45 14.299 L55 14.299 Z%22 fill=%22none%22 stroke=%22%23163A3C%22 stroke-width=%225.5%22 stroke-linejoin=%22miter%22%3E%3C/path%3E%3Cg transform=%22translate%2826 26%29 scale%28.48%29%22%3E%3Cpath d=%22M12 88 L12 12 L26 12 L50 44 L74 12 L88 12 L88 88 L74 88 L74 36 L50 68 L26 36 L26 88 Z%22 fill=%22%23163A3C%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E">
@@ -200,7 +200,7 @@
   .live-meter i { display: block; height: 100%; background: var(--sea); border-radius: 5px; transition: width 0.45s cubic-bezier(.4,0,.2,1); }
   .live-figs { font-size: 0.93rem; color: var(--steel); }
   .live-figs b { color: var(--ink); font-weight: 500; font-size: 1.1rem; }
-  .live-btns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; margin-top: auto; padding-top: 1.2rem; }
+  .live-btns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; margin-top: 1.2rem; }
   @media (max-width: 30rem) { .live-btns { grid-template-columns: 1fr; } }
   .live-btns button { min-height: 4.2rem; border: 1px solid var(--sea); border-radius: 6px; background: var(--sheet); color: var(--sea); font: inherit; font-size: 0.95rem; font-weight: 500; line-height: 1.25; cursor: pointer; padding: 0.5rem; }
   .live-btns button:hover { background: var(--sea); color: var(--paper); }
@@ -290,7 +290,10 @@
   .check li span { color: var(--steel); }
 
   /* Trade pages */
-  .page-hero { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2.5rem, 5vw, 4rem); }
+  .page-hero { position: relative; overflow: hidden; padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2.5rem, 5vw, 4rem); }
+  .hero-mark { color: var(--sea); opacity: 0.07; right: -4rem; width: min(34rem, 60vw); }
+  @media (max-width: 48rem) { .hero-mark { display: none; } }
+  .page-hero .wrap { position: relative; z-index: 1; }
   .crumb { font-size: 0.9rem; color: var(--steel); margin-bottom: 1rem; }
   .crumb a { color: var(--steel); }
 
@@ -306,282 +309,37 @@
 </header>
 
 <main>
-  <section class="hero">
+  <section class="page-hero">
+    <svg class="band-mark hero-mark" viewBox="0 0 100 100" aria-hidden="true"><defs><pattern id="hband" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2" stroke="currentColor" stroke-width="0.3"></line></pattern></defs><path d="M83.50 50.00 L90.00 50.00 A40 40 0 0 1 50.00 90.00 L50.00 83.50 A33.5 33.5 0 0 0 83.50 50.00 Z" fill="url(#hband)" stroke="currentColor" stroke-width="0.3"></path><line x1="3" y1="50" x2="31" y2="50" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><line x1="50" y1="3" x2="50" y2="31" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><line x1="69" y1="50" x2="97" y2="50" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><line x1="50" y1="69" x2="50" y2="97" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><path d="M53 10.113 A40 40 0 1 1 47 10.113 L47 13.313 L53 13.313 Z" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linejoin="miter"></path><circle cx="50" cy="50" r="33.5" fill="none" stroke="currentColor" stroke-width="0.4"></circle><circle cx="71.21" cy="71.21" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="66.71" y1="71.21" x2="75.71" y2="71.21" stroke="currentColor" stroke-width="0.27"></line><line x1="71.21" y1="66.71" x2="71.21" y2="75.71" stroke="currentColor" stroke-width="0.27"></line><circle cx="28.79" cy="71.21" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="24.29" y1="71.21" x2="33.29" y2="71.21" stroke="currentColor" stroke-width="0.27"></line><line x1="28.79" y1="66.71" x2="28.79" y2="75.71" stroke="currentColor" stroke-width="0.27"></line><circle cx="28.79" cy="28.79" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="24.29" y1="28.79" x2="33.29" y2="28.79" stroke="currentColor" stroke-width="0.27"></line><line x1="28.79" y1="24.29" x2="28.79" y2="33.29" stroke="currentColor" stroke-width="0.27"></line><circle cx="71.21" cy="28.79" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="66.71" y1="28.79" x2="75.71" y2="28.79" stroke="currentColor" stroke-width="0.27"></line><line x1="71.21" y1="24.29" x2="71.21" y2="33.29" stroke="currentColor" stroke-width="0.27"></line><g transform="translate(35.00 35.00) scale(0.3)"><path d="M12 88 L12 12 L26 12 L50 44 L74 12 L88 12 L88 88 L74 88 L74 36 L50 68 L26 36 L26 88 Z" fill="none" stroke="currentColor" stroke-width="2.67" stroke-linejoin="miter"></path></g><path d="M37.10 62.90 L37.10 37.10 L43.55 37.10 L50.00 45.70 L56.45 37.10 L62.90 37.10 L62.90 62.90 L55.70 62.90 L55.70 50.30 L50.00 57.90 L44.30 50.30 L44.30 62.90 Z" fill="none" stroke="currentColor" stroke-width="0.30" stroke-dasharray="1.1 0.9" stroke-linejoin="miter"></path></svg>
     <div class="wrap">
-      <div>
-        <h1>Production software for manufacturers who've outgrown the spreadsheet</h1>
-        <p class="lede">Bespoke MRP systems for small extruders, fabricators and light engineering firms. Orders, materials, recipes, tooling and stock, set up around the way your shop already works.</p>
-        <div class="cta-row">
-          <a class="btn" href="/demo">Try the working demo</a>
-          <a class="btn ghost" href="mailto:info@manninsystems.co.uk">Get in touch</a>
-        </div>
-        <div class="where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Based in the Isle of Man, working across the island and the UK</div>
-      </div>
-
-      <figure class="sheet">
-        <svg viewBox="0 0 400 345" role="img" aria-labelledby="dwg-title">
-          <title id="dwg-title">Technical drawing of an extruded profile, annotated with its recipe, die and job details</title>
-          <defs>
-            <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="hatch-line"/></pattern>
-            <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1.5 L10 5 L0 8.5 z" class="d-arrow"/></marker>
-          </defs>
-          <path class="d-fill" fill-rule="evenodd" d="M90 110 H310 V255 H350 V270 H90 Z M110 130 V250 H192 V130 Z M208 130 V250 H290 V130 Z"/>
-          <path class="d-outline" pathLength="1" d="M90 110 H310 V255 H350 V270 H90 Z M110 130 V250 H192 V130 Z M208 130 V250 H290 V130 Z"/>
-          <g class="d-notes">
-            <path class="d-centre" d="M200 96 V284 M76 190 H324"/>
-            <path class="d-ext" d="M90 104 V62 M310 104 V62"/>
-            <path class="d-dim" d="M91 72 H309" marker-start="url(#arr)" marker-end="url(#arr)"/>
-            <text class="d-text" x="200" y="64" text-anchor="middle">220</text>
-            <path class="d-ext" d="M84 110 H36 M84 270 H36"/>
-            <path class="d-dim" d="M46 111 V269" marker-start="url(#arr)" marker-end="url(#arr)"/>
-            <text class="d-text" x="36" y="190" text-anchor="middle" transform="rotate(-90 36 190)">160</text>
-            <path class="d-leader" d="M81 312 L100 263"/><circle class="d-dot" cx="100" cy="263" r="2.2"/>
-            <circle class="d-balloon" cx="75" cy="325" r="13"/><text class="d-num" x="75" y="329.5" text-anchor="middle">1</text>
-            <path class="d-leader" d="M351 58 L301 118"/><circle class="d-dot" cx="301" cy="118" r="2.2"/>
-            <circle class="d-balloon" cx="360" cy="48" r="13"/><text class="d-num" x="360" y="52.5" text-anchor="middle">2</text>
-            <path class="d-leader" d="M357 312 L338 264"/><circle class="d-dot" cx="338" cy="264" r="2.2"/>
-            <circle class="d-balloon" cx="363" cy="325" r="13"/><text class="d-num" x="363" y="329.5" text-anchor="middle">3</text>
-          </g>
-        </svg>
-        <figcaption>
-          <ol class="key">
-            <li><b aria-hidden="true">1</b><span><strong>Material:</strong> recipe R-17 with 20% regrind</span></li>
-            <li><b aria-hidden="true">2</b><span><strong>Die D-042:</strong> 38 runs since its last polish</span></li>
-            <li><b aria-hidden="true">3</b><span><strong>Job 1042:</strong> 1,200 m, due Friday</span></li>
-          </ol>
-          <div class="title-block" aria-hidden="true">
-            <div><small>Title</small><span>Twin-chamber profile</span></div>
-            <div><small>Scale</small><span>1:1</span></div>
-            <div><small>Sheet</small><span>1 of 1</span></div>
-          </div>
-        </figcaption>
-      </figure>
+      <p class="crumb"><a href="/">Mannin Systems</a> / <a href="/#who">Who it's for</a></p>
+      <h1>Production software for small extruders</h1>
+      <p class="lede">Recipes, regrind, dies and the metres-to-kilos maths. A system that understands extrusion, built by someone whose background is running it.</p>
+      <div class="cta-row"><a class="btn" href="mailto:info@manninsystems.co.uk?subject=Production%20health%20check">Book a free health check</a><a class="btn ghost" href="/demo">Try the working demo</a></div>
     </div>
   </section>
-
-    <section class="section alt" id="live">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>See it work, right here</h2>
-        <p>Tap a button on the Line 1 screen. The office screen updates at the same moment, because both read from the same record.</p>
-      </div>
-      <div class="live">
-        <div class="live-st" aria-label="Line 1 station screen">
-          <div class="live-bar"><span>Line 1 station</span><span>Gary K.</span></div>
-          <div class="live-body">
-            <small>Running now</small>
-            <span class="live-jn">Job 1037</span>
-            <span>Glazing bead 18 mm, white</span>
-            <div class="live-meter"><i id="lv-fill" style="width:44.9%"></i></div>
-            <div class="live-figs"><b id="lv-made">2,580</b> of 5,750 m made</div>
-            <div class="live-btns">
-              <button type="button" data-lv="out">Book 250 m made</button>
-              <button type="button" data-lv="scrap">Scrap 20 m</button>
-              <button type="button" data-lv="issue">Load 25 kg regrind</button>
-            </div>
-          </div>
-        </div>
-        <div class="live-link" aria-hidden="true"><span>same record</span></div>
-        <div class="live-off" aria-label="Office overview" aria-live="polite">
-          <div class="live-bar light"><span>Office overview</span><span id="lv-clock">12:30</span></div>
-          <div class="live-grid">
-            <div><small>Job 1037 progress</small><b id="lv-pct">45%</b></div>
-            <div><small>Good metres</small><b id="lv-good">2,580 m</b></div>
-            <div><small>Scrap today</small><b id="lv-scrap">0 m</b></div>
-            <div><small>White regrind in stock</small><b id="lv-rg">407 kg</b></div>
-          </div>
-          <ol class="live-log" id="lv-log"></ol>
-          <div class="live-foot"><span>Latest entries, newest first</span><button type="button" data-lv="reset">Start again</button></div>
-        </div>
-      </div>
-      <p class="after-live">That's a small slice. <a href="/demo">The full demo</a> has orders, stock, traceability, dies and screens for every station.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap split">
-      <div>
-        <h2>Sound familiar?</h2>
-        <p class="muted">The big-name systems are priced and built for large plants. Mannin Systems is for everyone else.</p>
-      </div>
-      <ul class="pains">
-        <li>The production plan lives on a whiteboard, or in one person's head.</li>
-        <li>There's a spreadsheet only one person understands, and everyone is wary of touching it.</li>
-        <li>Nobody is quite sure how much material, or regrind, is really in stock.</li>
-        <li>Tooling history is whatever someone remembers about the last run.</li>
-        <li>Off-the-shelf software was built for someone else's factory, and it shows.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section alt" id="who">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Who it's for</h2>
-        <p>Small manufacturers, usually between five and fifty people, who make things to order and track it all in spreadsheets.</p>
-      </div>
-      <div class="trades">
-        <a class="trade" href="/extruders"><svg viewBox="0 0 52 52" aria-hidden="true"><path d="M6 14h34v22h6v3H6z"/><path d="M10 18v17h12V18zM26 18v17h10V18z"/></svg><h3>Extruders</h3><p>Recipes, regrind, dies, co-ex and the metres-to-kilos maths.</p><span class="go">For extruders</span></a>
-        <a class="trade" href="/fabricators"><svg viewBox="0 0 52 52" aria-hidden="true"><path d="M6 38h20l12-20h8"/><path d="M6 42h20.8l12-20H46"/><path d="M26 38v4"/></svg><h3>Fabricators</h3><p>Jobs by drawing and revision, material certs, offcuts and subcontract finishing.</p><span class="go">For fabricators</span></a>
-        <a class="trade" href="/light-engineering"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="9"/><path d="M26 8v6M26 38v6M8 26h6M38 26h6M13.3 13.3l4.2 4.2M34.5 34.5l4.2 4.2M13.3 38.7l4.2-4.2M34.5 17.5l4.2-4.2"/><circle cx="26" cy="26" r="3"/></svg><h3>Light engineering</h3><p>Routings across machines, setup and run times, bar stock and inspection records.</p><span class="go">For engineering firms</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>What your system can cover</h2>
-        <p>Each system is built for one business, so it covers what you need and leaves out what you don't.</p>
-      </div>
-      <div class="covers">
-        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2.8h6V4M8.5 9.5h7M8.5 13h7M8.5 16.5h4"/></svg><h3>Orders and scheduling</h3><p>Customer orders turned into jobs, with a clear view of what's running, what's next and what's late.</p></div>
-        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l-6 8v5l-4 3v-8z"/></svg><h3>Materials and recipes</h3><p>Blends, masterbatch and regrind ratios for each product, with material usage worked out per job.</p></div>
-        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/><path d="M9 9.5h6v5H9z"/></svg><h3>Tooling</h3><p>Dies, moulds and fixtures: where they are, what they've run and when they're due for maintenance.</p></div>
-        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5h8v7h-8zM12.5 12.5h8v7h-8zM8 4.5h8v8H8z"/></svg><h3>Stock</h3><p>Raw material, work in progress and finished goods, updated as work is booked rather than at month end.</p></div>
-        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="6" r="2"/><circle cx="18.5" cy="12" r="2"/><circle cx="5.5" cy="18" r="2"/><path d="M7.5 6h4v6h5M11.5 12v6h-4"/></svg><h3>Traceability</h3><p>Which batch of material went into which job, for when a customer comes back with a question.</p></div>
-        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5h17M6.5 20.5v-6M11 20.5v-11M15.5 20.5v-4M19.5 20.5v-15"/></svg><h3>Reporting</h3><p>Output, scrap and downtime in plain figures you can act on.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="calc">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>What are your spreadsheets costing you?</h2>
-        <p>A rough guide, not a promise. Move the sliders to match your business.</p>
-      </div>
-      <div class="calc">
-        <div>
-          <div class="field"><label for="c-hrs"><span>Hours a week spent chasing stock, updating spreadsheets and doing production paperwork</span><output id="o-hrs">12</output></label>
-            <input type="range" id="c-hrs" min="2" max="40" step="1" value="12"><small>Across everyone who does it</small></div>
-          <div class="field"><label for="c-rate"><span>Cost of that time per hour, including overheads</span><output id="o-rate">£20</output></label>
-            <input type="range" id="c-rate" min="12" max="45" step="1" value="20"></div>
-          <div class="field"><label for="c-spend"><span>Material you buy in a year</span><output id="o-spend">£400,000</output></label>
-            <input type="range" id="c-spend" min="50000" max="2000000" step="25000" value="400000"></div>
-          <div class="field"><label for="c-waste"><span>Scrap and waste, as a share of material</span><output id="o-waste">5%</output></label>
-            <input type="range" id="c-waste" min="1" max="15" step="0.5" value="5"></div>
-          <details class="assume"><summary>Change the assumptions</summary>
-            <div class="field"><label for="c-a1"><span>Paperwork time a system saves</span><output id="o-a1">40%</output></label>
-              <input type="range" id="c-a1" min="10" max="70" step="5" value="40"></div>
-            <div class="field"><label for="c-a2"><span>Waste a system helps cut</span><output id="o-a2">15%</output></label>
-              <input type="range" id="c-a2" min="5" max="40" step="5" value="15"><small>From better recipes, regrind tracking and seeing scrap as it happens</small></div>
-          </details>
-        </div>
-        <div class="result" aria-live="polite">
-          <h3>Likely saving a year</h3>
-          <div class="big" id="r-save">£8,142</div>
-          <div class="rows">
-            <div><span>Paperwork time now</span><b id="r-admin">£12,480 a year</b></div>
-            <div><span>Material lost to waste now</span><b id="r-waste">£20,000 a year</b></div>
-            <div><span>Pays back, standard price</span><b id="r-pay">17 months</b></div>
-            <div><span>Pays back, founding price</span><b id="r-payf">10 months</b></div>
-          </div>
-          <p id="r-note">Based on the Core system at £6,500 to set up and £295 a month. The assumptions are deliberately cautious.</p>
-          <a class="btn" href="mailto:info@manninsystems.co.uk?subject=Production%20health%20check">Get your real numbers with a free health check</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="demo">
-    <div class="wrap demo">
-      <div>
-        <h2>Try it yourself</h2>
-        <p>A working system for Brackwater Extrusions, a made-up two-line PVC extruder with three weeks of orders, jobs and stock movements in it. Sign in as the owner, the planner or a machine operator and see what each of them gets.</p>
-        <a class="btn" href="/demo">Open the demo</a>
-        <p class="fine">Best on a computer, but it works on a phone too. All companies and figures are invented.</p>
-      </div>
-      <ul class="try">
-        <li><a href="/demo#/overview"><div><b>See what needs attention today</b><span>A material shortage, a late order and a die due a polish, spotted without opening a spreadsheet.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><a href="/demo#/trace/FG-1025"><div><b>Trace a batch back to its supplier</b><span>Follow any finished lot back to the raw material deliveries it was made from.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><a href="/demo#/jobs/1029"><div><b>Open a job sheet</b><span>Materials by lot, scrap, regrind and yield for a job with part of its run held for QA.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><a href="/demo"><div><b>Book it from the shop floor</b><span>Sign in at the Line 1 station, scan material into the running job and book output and scrap. Watch the office screens update.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-        <li><a href="/demo#/ledger"><div><b>See how mistakes are put right</b><span>Every stock movement is kept. A mis-keyed delivery is corrected with a reversing entry, not overwritten.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-      </ul>
-    </div>
-  </section>
-
   <section class="section alt">
-    <div class="wrap split about">
-      <h2>Built by someone from the shop floor</h2>
-      <div>
-        <p class="big">I know what a changeover costs, why regrind ratios matter, and how much of a factory runs on knowledge that was never written down.</p>
-        <p class="muted">My background is in extrusion manufacturing, process improvement and development, not software sales. That means less time explaining your business to me, and a system that uses your names for your products and processes.</p>
-        <div class="sign"><span class="mono" aria-hidden="true">C</span><div><strong>Chris</strong><span>Founder, Mannin Systems</span></div></div>
-      </div>
+    <div class="wrap split">
+      <div><h2>Sound familiar?</h2><p class="muted">If three or more of these ring true, it's worth a conversation.</p></div>
+      <ul class="pains"><li>Regrind goes back into the mix, but nobody can say how much is in stock or which job it came from.</li><li>Recipes change, and the spreadsheet doesn't record which version a job actually ran with.</li><li>Dies get polished when someone remembers, not when they're due.</li><li>Orders arrive in metres, material goes out in kilos, and the conversion lives in one person's head.</li><li>Co-ex scrap, colour changes and start-up waste never get counted properly.</li></ul>
     </div>
   </section>
-
-  <section class="section" id="how">
+  <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <h2>How it works</h2>
-        <p>No big-bang switchover. You keep working the way you do now until the new system has proved itself.</p>
-      </div>
-      <ol class="steps">
-        <li><h3>Free health check</h3><p>An hour on your shop floor to see how you work now: orders, materials, the spreadsheets and the whiteboard.</p></li>
-        <li><h3>Start with one process</h3><p>We pick the area causing the most trouble and build that first, around your products and your terms.</p></li>
-        <li><h3>Run it side by side</h3><p>The new system runs alongside your spreadsheets until you trust the numbers.</p></li>
-        <li><h3>Switch over</h3><p>Then you move across, with support on hand and room to add more areas when you're ready.</p></li>
-      </ol>
+      <div class="section-head"><h2>What your system can do</h2><p>Built around how your shop works, using your names for your products and processes.</p></div>
+      <div class="covers"><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l-6 8v5l-4 3v-8z"/></svg><h3>Recipes with versions</h3><p>Blends, masterbatch and regrind ratios per product. Every job is locked to the recipe version it ran with.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg><h3>Regrind as real stock</h3><p>Regrind is booked back as its own lot, traced to the job that made it and the jobs that used it.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/><path d="M9 9.5h6v5H9z"/></svg><h3>Die log</h3><p>Runs since last polish, cleans and repairs, and a warning before a die is due on its next job.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M12 4v16M6 8h12M6 8l-2.5 6h5zM18 8l-2.5 6h5z"/></svg><h3>Metres and kilos</h3><p>Weight per metre on every profile, so material needed and yield work themselves out.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="1"/><path d="M3.5 10h17M8 5v14"/></svg><h3>Line board</h3><p>Every line across the fortnight: what ran, what is running and what is next.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg><h3>QA holds and traceability</h3><p>Quarantine a batch in two taps, and trace any finished lot back to the supplier delivery.</p></div></div>
     </div>
   </section>
-
-  <section class="section alt" id="check">
-    <div class="wrap check">
-      <div>
-        <h2>Start with a free production health check</h2>
-        <p class="big">An hour walking your shop floor and talking through how you plan, buy and track. Within a week you get a short written summary of where time and material are going, and what would help, whether or not that's us.</p>
-        <a class="btn" href="mailto:info@manninsystems.co.uk?subject=Production%20health%20check">Book a health check</a>
-      </div>
-      <ul>
-        <li><b>Where</b><span>In person anywhere on the Isle of Man. UK firms by video call, or a visit by arrangement.</span></li>
-        <li><b>How long</b><span>About an hour of your time, plus a follow-up call if you want one.</span></li>
-        <li><b>What you get</b><span>A plain-English summary you can keep, with the three biggest things worth fixing.</span></li>
-        <li><b>The catch</b><span>There isn't one. No obligation and no sales pitch.</span></li>
+  <section class="section alt">
+    <div class="wrap demo">
+      <div><h2>See it, then talk it through</h2><p>The demo is a two-line PVC extruder, so you can see all of this working now.</p><div class="cta-row" style="margin-top:1.5rem"><a class="btn" href="/demo">Open the demo</a><a class="btn ghost" href="/#pricing">See pricing</a></div></div>
+      <ul class="try">
+        <li><a href="/#calc"><div><b>What are your spreadsheets costing you?</b><span>A quick calculator with cautious, visible assumptions.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="mailto:info@manninsystems.co.uk?subject=Production%20health%20check"><div><b>Free production health check</b><span>An hour on your shop floor and a written summary within a week. No obligation.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="/#pricing"><div><b>Founding customer offer</b><span>40% off set-up and fixed monthly pricing for the first two firms.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
       </ul>
     </div>
   </section>
-
-  <section class="section" id="pricing">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Pricing</h2>
-        <p>No per-user fees, ever. Put a screen at every line and every desk at no extra cost.</p>
-      </div>
-      <div class="plans">
-        <div class="plan">
-          <h3>Starter</h3><p class="for">One process, done properly</p>
-          <div class="amt">£2,950 <small>to set up</small></div><div class="then">then £145 a month</div>
-          <ul><li>The area causing the most trouble: stock and traceability, or orders and scheduling</li><li>Screens for the office and the shop floor</li><li>Your spreadsheets brought across</li><li>Training on site</li></ul>
-        </div>
-        <div class="plan main">
-          <h3>Core</h3><p class="for">Your whole production system</p>
-          <div class="amt">£6,500 <small>to set up</small></div><div class="then">then £295 a month</div>
-          <ul><li>Orders, scheduling and a line board</li><li>Materials, recipes and stock by lot</li><li>Jobs, output, scrap and yield</li><li>Tooling and maintenance log</li><li>Full traceability, supplier to customer</li><li>Station screens for every line or machine</li></ul>
-        </div>
-        <div class="plan">
-          <h3>Add-ons</h3><p class="for">When you're ready for more</p>
-          <div class="amt">£1,500 <small>each to set up</small></div><div class="then">then £45 a month each</div>
-          <ul><li>Job costing and margins</li><li>Purchasing, linked to Xero or QuickBooks</li><li>Customer portal for order status and certificates</li><li>Label and barcode printing</li></ul>
-        </div>
-      </div>
-      <div class="includes">
-        <div><b>Every plan includes</b><span>Secure hosting in London, daily backups, updates, and support by phone and email with a reply the same working day.</span></div>
-        <div><b>No lock-in</b><span>Twelve months to start, then month to month. Your data is yours: export it any time, or take a full copy if you leave.</span></div>
-        <div><b>Fixed prices</b><span>Set-up is agreed in writing before any work starts. No surprise invoices.</span></div>
-      </div>
-      <p class="vat">Prices exclude VAT. Larger or unusual set-ups are quoted after a health check.</p>
-      <div class="founding">
-        <div class="places"><div><b>2</b>places</div></div>
-        <div><h3>Founding customer offer</h3><p>The first two firms get 40% off set-up (Core from £3,900) and their monthly price fixed for three years. In return: a short case study, the odd reference call, and honest feedback.</p></div>
-        <a class="btn" href="mailto:info@manninsystems.co.uk?subject=Founding%20customer%20place">Ask about a place</a>
-      </div>
-    </div>
-  </section>
-
-
   <section class="section contact" id="contact">
     <svg class="band-mark" viewBox="0 0 100 100" aria-hidden="true"><defs><pattern id="hband" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2" stroke="currentColor" stroke-width="0.3"></line></pattern></defs><path d="M83.50 50.00 L90.00 50.00 A40 40 0 0 1 50.00 90.00 L50.00 83.50 A33.5 33.5 0 0 0 83.50 50.00 Z" fill="url(#hband)" stroke="currentColor" stroke-width="0.3"></path><line x1="3" y1="50" x2="31" y2="50" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><line x1="50" y1="3" x2="50" y2="31" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><line x1="69" y1="50" x2="97" y2="50" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><line x1="50" y1="69" x2="50" y2="97" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><path d="M53 10.113 A40 40 0 1 1 47 10.113 L47 13.313 L53 13.313 Z" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linejoin="miter"></path><circle cx="50" cy="50" r="33.5" fill="none" stroke="currentColor" stroke-width="0.4"></circle><circle cx="71.21" cy="71.21" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="66.71" y1="71.21" x2="75.71" y2="71.21" stroke="currentColor" stroke-width="0.27"></line><line x1="71.21" y1="66.71" x2="71.21" y2="75.71" stroke="currentColor" stroke-width="0.27"></line><circle cx="28.79" cy="71.21" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="24.29" y1="71.21" x2="33.29" y2="71.21" stroke="currentColor" stroke-width="0.27"></line><line x1="28.79" y1="66.71" x2="28.79" y2="75.71" stroke="currentColor" stroke-width="0.27"></line><circle cx="28.79" cy="28.79" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="24.29" y1="28.79" x2="33.29" y2="28.79" stroke="currentColor" stroke-width="0.27"></line><line x1="28.79" y1="24.29" x2="28.79" y2="33.29" stroke="currentColor" stroke-width="0.27"></line><circle cx="71.21" cy="28.79" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="66.71" y1="28.79" x2="75.71" y2="28.79" stroke="currentColor" stroke-width="0.27"></line><line x1="71.21" y1="24.29" x2="71.21" y2="33.29" stroke="currentColor" stroke-width="0.27"></line><g transform="translate(35.00 35.00) scale(0.3)"><path d="M12 88 L12 12 L26 12 L50 44 L74 12 L88 12 L88 88 L74 88 L74 36 L50 68 L26 36 L26 88 Z" fill="none" stroke="currentColor" stroke-width="2.67" stroke-linejoin="miter"></path></g><path d="M37.10 62.90 L37.10 37.10 L43.55 37.10 L50.00 45.70 L56.45 37.10 L62.90 37.10 L62.90 62.90 L55.70 62.90 L55.70 50.30 L50.00 57.90 L44.30 50.30 L44.30 62.90 Z" fill="none" stroke="currentColor" stroke-width="0.30" stroke-dasharray="1.1 0.9" stroke-linejoin="miter"></path></svg>
     <div class="wrap">
@@ -600,62 +358,5 @@
   </div>
 </footer>
 
-<script>
-(function () {
-  // ---- live mini demo ----
-  var S0 = { made: 2580, scrap: 0, rg: 407.2, t: 750, log: [] };
-  var S = JSON.parse(JSON.stringify(S0)), PLAN = 5750;
-  var nf = new Intl.NumberFormat("en-GB");
-  var el = function (id) { return document.getElementById(id); };
-  function hhmm(t) { return String(Math.floor(t / 60)).padStart(2, "0") + ":" + String(t % 60).padStart(2, "0"); }
-  function flash(id) { var b = el(id); if (!b) return; b.classList.remove("flash"); void b.offsetWidth; b.classList.add("flash"); }
-  function draw(changed) {
-    if (!el("lv-made")) return;
-    el("lv-made").textContent = nf.format(S.made);
-    el("lv-fill").style.width = Math.min(100, S.made / PLAN * 100).toFixed(1) + "%";
-    el("lv-pct").textContent = Math.round(S.made / PLAN * 100) + "%";
-    el("lv-good").textContent = nf.format(S.made - S.scrap) + " m";
-    el("lv-scrap").textContent = nf.format(S.scrap) + " m";
-    el("lv-rg").textContent = nf.format(Math.round(S.rg)) + " kg";
-    el("lv-clock").textContent = hhmm(S.t);
-    var base = [["10:30", "Output 2,580 m, job 1037", "Paul C."], ["06:09", "Issued 92 kg regrind, job 1037", "Paul C."], ["06:05", "Issued 409.5 kg PVC-U, job 1037", "Paul C."]];
-    var rows = S.log.slice().reverse().concat(base).slice(0, 5);
-    el("lv-log").innerHTML = rows.map(function (r, i) {
-      return '<li class="' + (i === 0 && S.log.length && changed ? "new" : "") + '"><span>' + r[0] + '</span><span>' + r[1] + ' <em>' + r[2] + '</em></span></li>';
-    }).join("");
-    (changed || []).forEach(flash);
-  }
-  document.addEventListener("click", function (e) {
-    var b = e.target.closest("[data-lv]"); if (!b) return;
-    var a = b.getAttribute("data-lv");
-    if (a === "reset") { S = JSON.parse(JSON.stringify(S0)); draw([]); return; }
-    S.t += 2 + Math.floor(Math.random() * 3);
-    if (a === "out") { S.made = Math.min(PLAN, S.made + 250); S.log.push([hhmm(S.t), "Output 250 m, job 1037", "Gary K."]); draw(["lv-pct", "lv-good"]); }
-    if (a === "scrap") { if (S.made - S.scrap < 20) return; S.scrap += 20; S.log.push([hhmm(S.t), "Scrap 20 m (surface marks), job 1037", "Gary K."]); draw(["lv-good", "lv-scrap"]); }
-    if (a === "issue") { if (S.rg < 25) return; S.rg -= 25; S.log.push([hhmm(S.t), "Issued 25 kg regrind, job 1037", "Gary K."]); draw(["lv-rg"]); }
-  });
-  draw();
-
-  // ---- cost calculator ----
-  var SET = 6500, MON = 295, SETF = 3900;
-  var money = function (v) { return "£" + nf.format(Math.round(v)); };
-  function months(setup, monthlySaving) { var net = monthlySaving - MON; if (net <= 0) return null; return Math.max(1, Math.ceil(setup / net)); }
-  function calc() {
-    if (!el("c-hrs")) return;
-    var hrs = +el("c-hrs").value, rate = +el("c-rate").value, spend = +el("c-spend").value, waste = +el("c-waste").value, a1 = +el("c-a1").value, a2 = +el("c-a2").value;
-    el("o-hrs").textContent = hrs; el("o-rate").textContent = "£" + rate; el("o-spend").textContent = money(spend); el("o-waste").textContent = waste + "%";
-    el("o-a1").textContent = a1 + "%"; el("o-a2").textContent = a2 + "%";
-    var admin = hrs * rate * 52, lost = spend * waste / 100, save = admin * a1 / 100 + lost * a2 / 100;
-    el("r-admin").textContent = money(admin) + " a year"; el("r-waste").textContent = money(lost) + " a year"; el("r-save").textContent = money(save);
-    var p = months(SET, save / 12), pf = months(SETF, save / 12);
-    el("r-pay").textContent = p ? p + (p === 1 ? " month" : " months") : "Not at these figures";
-    el("r-payf").textContent = pf ? pf + (pf === 1 ? " month" : " months") : "Not at these figures";
-    el("r-note").textContent = p ? "Based on the Core system at £6,500 to set up and £295 a month. The assumptions are deliberately cautious."
-      : "At these figures a full system probably wouldn't pay for itself yet. The Starter plan, or a free health check, would tell you honestly.";
-  }
-  document.addEventListener("input", function (e) { if (e.target.id && e.target.id.indexOf("c-") === 0) calc(); });
-  calc();
-})();
-</script>
 </body>
 </html>

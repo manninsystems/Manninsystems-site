@@ -228,13 +228,18 @@
   @media (prefers-reduced-motion: reduce) { .live-meter i { transition: none; } .live-grid b.flash, .live-log li.new { animation: none; } }
 
   /* Who it's for */
-  .trades { display: grid; gap: 1.5rem 2.5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
-  .trade { display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid var(--sea); padding-top: 1.25rem; color: var(--ink); text-decoration: none; }
-  .trade svg { width: 3.25rem; height: 3.25rem; fill: none; stroke: var(--sea); stroke-width: 1; margin-bottom: 0.5rem; }
-  .trade h3 { font-size: 1.2rem; font-weight: 400; color: var(--sea); margin: 0; }
-  .trade p { margin: 0; color: var(--steel); }
-  .trade .go { margin-top: 0.5rem; font-weight: 500; color: var(--sea); }
-  .trade:hover .go { text-decoration: underline; text-underline-offset: 0.22em; }
+  .trades { display: grid; gap: 1rem 1.25rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+  .trade { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.35rem 1.1rem; align-items: start; padding: 1.4rem 1.4rem 1.3rem;
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; color: var(--ink); text-decoration: none; transition: border-color 0.15s, box-shadow 0.15s; }
+  .section:not(.alt) .trade { background: var(--sheet); }
+  .trade:hover { border-color: var(--sea); box-shadow: 0 14px 30px -22px rgba(22, 58, 60, 0.55); }
+  .trade svg.ic { grid-row: span 3; width: 3.4rem; height: 3.4rem; padding: 0.65rem; box-sizing: border-box; border-radius: 50%; background: var(--mist); fill: none; stroke: var(--sea); stroke-width: 1.5; }
+  .trade h3 { font-size: 1.25rem; font-weight: 500; color: var(--sea); margin: 0.1rem 0 0; }
+  .trade p { margin: 0; color: var(--steel); font-size: 0.97rem; line-height: 1.5; }
+  .trade .go { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 0.6rem; font-weight: 500; color: var(--sea); font-size: 0.95rem; }
+  .trade .go svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.6; transition: transform 0.15s; }
+  .trade:hover .go svg { transform: translateX(3px); }
+  @media (prefers-reduced-motion: reduce) { .trade .go svg { transition: none; } }
 
   /* Calculator */
   .calc { display: grid; gap: 2.5rem 4rem; grid-template-columns: 1fr; align-items: start; }
@@ -295,6 +300,17 @@
   .crumb a { color: var(--steel); }
 
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Mannin Systems",
+  "url": "https://manninsystems.co.uk/",
+  "email": "info@manninsystems.co.uk",
+  "description": "Bespoke production and MRP software for small extruders, fabricators and light engineering firms.",
+  "areaServed": ["Isle of Man", "United Kingdom"]
+}
+</script>
 </head>
 <body>
 
@@ -421,9 +437,9 @@
         <p>Small manufacturers, usually between five and fifty people, who make things to order and track it all in spreadsheets.</p>
       </div>
       <div class="trades">
-        <a class="trade" href="/extruders"><svg viewBox="0 0 52 52" aria-hidden="true"><path d="M6 14h34v22h6v3H6z"/><path d="M10 18v17h12V18zM26 18v17h10V18z"/></svg><h3>Extruders</h3><p>Recipes, regrind, dies, co-ex and the metres-to-kilos maths.</p><span class="go">For extruders</span></a>
-        <a class="trade" href="/fabricators"><svg viewBox="0 0 52 52" aria-hidden="true"><path d="M6 38h20l12-20h8"/><path d="M6 42h20.8l12-20H46"/><path d="M26 38v4"/></svg><h3>Fabricators</h3><p>Jobs by drawing and revision, material certs, offcuts and subcontract finishing.</p><span class="go">For fabricators</span></a>
-        <a class="trade" href="/light-engineering"><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="9"/><path d="M26 8v6M26 38v6M8 26h6M38 26h6M13.3 13.3l4.2 4.2M34.5 34.5l4.2 4.2M13.3 38.7l4.2-4.2M34.5 17.5l4.2-4.2"/><circle cx="26" cy="26" r="3"/></svg><h3>Light engineering</h3><p>Routings across machines, setup and run times, bar stock and inspection records.</p><span class="go">For engineering firms</span></a>
+        <a class="trade" href="/extruders"><svg class="ic" viewBox="0 0 52 52" aria-hidden="true"><path d="M6 14h34v22h6v3H6z"/><path d="M10 18v17h12V18zM26 18v17h10V18z"/></svg><h3>Extruders</h3><p>Recipes, regrind, dies, co-ex and the metres-to-kilos maths.</p><span class="go">For extruders <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="trade" href="/fabricators"><svg class="ic" viewBox="0 0 52 52" aria-hidden="true"><path d="M6 38h20l12-20h8"/><path d="M6 42h20.8l12-20H46"/><path d="M26 38v4"/></svg><h3>Fabricators</h3><p>Jobs by drawing and revision, material certs, offcuts and subcontract finishing.</p><span class="go">For fabricators <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="trade" href="/light-engineering"><svg class="ic" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="9"/><path d="M26 8v6M26 38v6M8 26h6M38 26h6M13.3 13.3l4.2 4.2M34.5 34.5l4.2 4.2M13.3 38.7l4.2-4.2M34.5 17.5l4.2-4.2"/><circle cx="26" cy="26" r="3"/></svg><h3>Light engineering</h3><p>Routings across machines, setup and run times, bar stock and inspection records.</p><span class="go">For engineering firms <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
   </section>

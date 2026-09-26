@@ -10,319 +10,179 @@
 <meta property="og:title" content="Mannin Systems">
 <meta property="og:description" content="Bespoke production software for small manufacturers who've outgrown the spreadsheet. Based in the Isle of Man.">
 <meta property="og:url" content="https://manninsystems.co.uk/">
-<meta name="theme-color" content="#F3F5F4" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141B22" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231C2530'/%3E%3Cpath fill='%23E0A21B' fill-rule='evenodd' d='M6 9h20v14H6z M9 12v8h6v-8z M17 12v8h6v-8z'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#F2F5F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E2224" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23F2F5F4%22/%3E%3Cpath d=%22M55 8.299 A42 42 0 1 1 45 8.299 L45 14.299 L55 14.299 Z%22 fill=%22none%22 stroke=%22%23163A3C%22 stroke-width=%225.5%22 stroke-linejoin=%22miter%22%3E%3C/path%3E%3Cg transform=%22translate%2826 26%29 scale%28.48%29%22%3E%3Cpath d=%22M12 88 L12 12 L26 12 L50 44 L74 12 L88 12 L88 88 L74 88 L74 36 L50 68 L26 36 L26 88 Z%22 fill=%22%23163A3C%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #F3F5F4;
-    --sheet: #FBFCFC;
-    --surface: #E6ECEB;
-    --ink: #1C2530;
-    --steel: #53636F;
-    --rule: #CBD3D6;
-    --grid: rgba(31, 95, 107, 0.07);
-    --gorse: #E0A21B;
-    --sea: #1F5F6B;
-    --on-gorse: #1C2530;
-    --band-bg: #1C2530;
-    --band-fg: #F3F5F4;
-    --band-muted: #A9B6BF;
-    --shadow: 0 1px 0 rgba(28, 37, 48, 0.04), 0 24px 48px -28px rgba(28, 37, 48, 0.38);
-    --wrap: 72rem;
-    --gutter: clamp(1.25rem, 5vw, 3rem);
-    box-sizing: border-box;
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --paper: #F2F5F4; --sheet: #FFFFFF; --mist: #E4ECEB; --ink: #132B2D; --sea: #163A3C; --sea-2: #0F2A2C;
+    --steel: #56706E; --silver: #9AAAA8; --rule: #D3DDDB; --grid: rgba(22, 58, 60, 0.055);
+    --band: #163A3C; --band-fg: #F2F5F4; --band-muted: #A9BCBA; --band-rule: rgba(228, 236, 235, 0.16);
+    --wrap: 74rem; --gutter: clamp(1.25rem, 5vw, 3.25rem);
+    box-sizing: border-box; padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --paper: #141B22; --sheet: #19222B; --surface: #1A232C;
-      --ink: #E6ECEE; --steel: #9AA9B3; --rule: #2C3843;
-      --grid: rgba(124, 186, 197, 0.07);
-      --gorse: #F0B43A; --sea: #7CBAC5;
-      --band-bg: #0E1419; --band-fg: #E6ECEE; --band-muted: #9AA9B3;
-      --shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 24px 48px -28px rgba(0, 0, 0, 0.7);
+      --paper: #0E2224; --sheet: #122A2C; --mist: #17312F; --ink: #E4ECEB; --sea: #A7CBC7; --sea-2: #C9E0DD;
+      --steel: #9FB3B1; --silver: #6F8583; --rule: #24403F; --grid: rgba(167, 203, 199, 0.05);
+      --band: #0A1A1B; --band-fg: #E4ECEB; --band-muted: #93A9A7; --band-rule: rgba(228, 236, 235, 0.12);
     }
   }
   :root[data-theme="dark"] {
-    --paper: #141B22; --sheet: #19222B; --surface: #1A232C;
-    --ink: #E6ECEE; --steel: #9AA9B3; --rule: #2C3843;
-    --grid: rgba(124, 186, 197, 0.07);
-    --gorse: #F0B43A; --sea: #7CBAC5;
-    --band-bg: #0E1419; --band-fg: #E6ECEE; --band-muted: #9AA9B3;
-    --shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 24px 48px -28px rgba(0, 0, 0, 0.7);
+    --paper: #0E2224; --sheet: #122A2C; --mist: #17312F; --ink: #E4ECEB; --sea: #A7CBC7; --sea-2: #C9E0DD;
+    --steel: #9FB3B1; --silver: #6F8583; --rule: #24403F; --grid: rgba(167, 203, 199, 0.05);
+    --band: #0A1A1B; --band-fg: #E4ECEB; --band-muted: #93A9A7; --band-rule: rgba(228, 236, 235, 0.12);
   }
   *, *::before, *::after { box-sizing: inherit; }
-  html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px)); }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(4.75rem + env(safe-area-inset-top, 0px)); }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-  img, svg { max-width: 100%; height: auto; }
-  a { color: var(--sea); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
-  a:hover { text-decoration-thickness: 2px; }
-  a:focus-visible { outline: 3px solid var(--sea); outline-offset: 3px; border-radius: 3px; }
-  p { margin: 0 0 1rem; max-width: 38em; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 1.0625rem; line-height: 1.65; font-weight: 400; -webkit-font-smoothing: antialiased; }
+  a { color: var(--sea); text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--sea); outline-offset: 3px; border-radius: 2px; }
+  p { margin: 0 0 1rem; max-width: 36em; }
+  svg { max-width: 100%; height: auto; }
   .wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
 
   /* Header */
-  .site-head {
-    position: sticky; top: 0; z-index: 10;
-    padding-top: env(safe-area-inset-top, 0px);
-    background: color-mix(in srgb, var(--paper) 86%, transparent);
-    -webkit-backdrop-filter: saturate(1.4) blur(12px);
-    backdrop-filter: saturate(1.4) blur(12px);
-    border-bottom: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
-  }
-  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; }
-  .brand {
-    display: inline-flex; align-items: center; gap: 0.65rem;
-    color: var(--ink); text-decoration: none;
-    font-weight: 760; font-stretch: 118%; font-size: 1.1rem; letter-spacing: -0.01em;
-    white-space: nowrap;
-  }
-  .brand svg { width: 1.85rem; height: 1.85rem; flex: none; }
-  .head-link {
-    font-weight: 650; font-size: 0.95rem; text-decoration: none;
-    color: var(--ink); padding: 0.5rem 0.9rem; border: 1px solid var(--rule); border-radius: 999px;
-    background: var(--sheet); white-space: nowrap;
-  }
-  @media (max-width: 26rem) { .brand { font-size: 1rem; font-stretch: 108%; } .head-link { font-size: 0.875rem; padding: 0.45rem 0.75rem; } }
-  .head-link:hover { border-color: var(--ink); }
+  .site-head { position: sticky; top: 0; z-index: 10; padding-top: env(safe-area-inset-top, 0px);
+    background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule); }
+  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.25rem; }
+  .brand { display: inline-flex; align-items: center; gap: 0.75rem; color: var(--sea); text-decoration: none; white-space: nowrap; }
+  .brand svg { width: 2.1rem; height: 2.1rem; flex: none; }
+  .brand span { font-size: 0.98rem; letter-spacing: 0.1em; font-weight: 500; }
+  .brand span b { font-weight: 300; }
+  .nav { display: flex; align-items: center; gap: 1.75rem; }
+  .nav a { color: var(--ink); text-decoration: none; font-size: 0.95rem; white-space: nowrap; }
+  .nav a:hover { color: var(--sea); text-decoration: underline; }
+  .nav a.pill { border: 1px solid var(--sea); color: var(--sea); padding: 0.45rem 0.95rem; border-radius: 3px; }
+  .nav a.pill:hover { background: var(--sea); color: var(--paper); text-decoration: none; }
+  @media (max-width: 40rem) { .nav a.hide-sm { display: none; } .brand span { font-size: 0.85rem; letter-spacing: 0.08em; } }
 
   /* Buttons */
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--gorse); color: var(--on-gorse);
-    padding: 0.9rem 1.4rem; border-radius: 6px;
-    font-weight: 720; font-stretch: 110%; text-decoration: none;
-    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.14), 0 8px 18px -10px rgba(160, 110, 0, 0.7);
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
-  }
-  .btn:hover { transform: translateY(-1px); text-decoration: none; }
-  .btn:active { transform: translateY(0); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.14); }
-  .btn:focus-visible { outline: 3px solid var(--sea); outline-offset: 3px; }
-  .btn svg { width: 1.1rem; height: 1.1rem; }
+  .btn { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--sea); color: var(--paper); padding: 0.85rem 1.35rem;
+    border: 1px solid var(--sea); border-radius: 3px; font-weight: 500; font-size: 1rem; letter-spacing: 0.01em; text-decoration: none; transition: background 0.15s, color 0.15s; }
+  .btn:hover { background: var(--sea-2); border-color: var(--sea-2); }
+  .btn.ghost { background: transparent; color: var(--sea); }
+  .btn.ghost:hover { background: var(--sea); color: var(--paper); }
+  .btn svg { width: 1.05rem; height: 1.05rem; }
+
+  /* Type */
+  h1 { margin: 0 0 1.5rem; font-weight: 300; font-size: clamp(2.3rem, 1.25rem + 3.6vw, 4.1rem); line-height: 1.07; letter-spacing: -0.025em; color: var(--sea); max-width: 14em; text-wrap: balance; }
+  h2 { margin: 0 0 1.1rem; font-weight: 300; font-size: clamp(1.8rem, 1.1rem + 2vw, 2.75rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--sea); max-width: 18em; text-wrap: balance; }
+  h3 { margin: 0 0 0.35rem; font-weight: 500; font-size: 1.08rem; line-height: 1.35; color: var(--ink); }
+  .muted { color: var(--steel); }
+  .lede { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.25rem); font-weight: 300; line-height: 1.6; color: var(--ink); max-width: 31em; margin-bottom: 2.25rem; }
 
   /* Hero */
-  .hero { padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(3.5rem, 8vw, 6.5rem); }
-  .hero .wrap { display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); grid-template-columns: 1fr; align-items: center; }
+  .hero { padding-block: clamp(3rem, 8vw, 6.5rem) clamp(3.5rem, 8vw, 6.5rem); }
+  .hero .wrap { display: grid; gap: clamp(2.5rem, 5vw, 5rem); grid-template-columns: 1fr; align-items: center; }
   @media (min-width: 62rem) { .hero .wrap { grid-template-columns: 1.05fr 0.95fr; } }
-  h1 {
-    margin: 0 0 1.35rem;
-    font-size: clamp(2.15rem, 1.1rem + 3.3vw, 3.7rem);
-    line-height: 1.03;
-    font-weight: 790;
-    font-stretch: 118%;
-    letter-spacing: -0.02em;
-    max-width: 13.5em;
-    text-wrap: balance;
-  }
-  .lede { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.25rem); line-height: 1.55; color: var(--steel); max-width: 31em; margin-bottom: 2rem; }
-  .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.4rem; }
-  .where { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--steel); font-size: 0.975rem; }
+  .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1rem; }
+  .where { display: flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--steel); }
   .where svg { width: 1rem; height: 1rem; }
 
-  /* Drawing sheet */
-  .sheet {
-    margin: 0;
-    background-color: var(--sheet);
-    background-image:
-      linear-gradient(var(--grid) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-    background-size: 22px 22px;
-    background-position: -1px -1px;
-    border: 1px solid var(--rule);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    padding: clamp(1rem, 3vw, 1.75rem) clamp(1rem, 3vw, 1.75rem) 8px;
-    position: relative;
-  }
-  .sheet::before {
-    content: ""; position: absolute; inset: 8px; border: 1px solid var(--rule); border-radius: 5px; pointer-events: none;
-  }
-  .sheet svg { display: block; width: 100%; max-width: 27rem; margin-inline: auto; position: relative; }
+  .sheet { margin: 0; background-color: var(--sheet); border: 1px solid var(--rule); border-radius: 4px; position: relative;
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 20px 20px; background-position: -1px -1px; padding: clamp(1rem, 3vw, 1.75rem) clamp(1rem, 3vw, 1.75rem) 8px; }
+  .sheet::before { content: ""; position: absolute; inset: 7px; border: 1px solid var(--rule); border-radius: 2px; pointer-events: none; }
+  .sheet > svg { display: block; width: 100%; max-width: 27rem; margin-inline: auto; position: relative; }
   .d-fill { fill: url(#hatch); }
-  .hatch-line { stroke: var(--steel); stroke-width: 1.1; opacity: 0.5; }
-  .d-outline { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linejoin: miter; }
-  .d-centre { stroke: var(--steel); stroke-width: 0.9; stroke-dasharray: 10 3 2 3; opacity: 0.7; }
-  .d-dim { stroke: var(--sea); stroke-width: 1.2; fill: none; }
-  .d-ext { stroke: var(--sea); stroke-width: 1; opacity: 0.65; }
-  .d-arrow { fill: var(--sea); }
-  .d-text { fill: var(--sea); font-size: 15px; font-weight: 650; font-family: inherit; font-variant-numeric: tabular-nums; }
-  .d-leader { stroke: var(--ink); stroke-width: 1.2; fill: none; }
-  .d-dot { fill: var(--ink); }
-  .d-balloon { fill: var(--gorse); stroke: var(--ink); stroke-width: 1.4; }
-  .d-num { fill: var(--on-gorse); font-size: 14px; font-weight: 780; font-family: inherit; }
-  .key {
-    list-style: none; margin: 0.75rem 0 0; padding: 0 0.25rem;
-    display: grid; gap: 0.55rem; font-size: 0.95rem; position: relative;
-  }
-  .key li { display: flex; gap: 0.7rem; align-items: center; }
-  .key b {
-    flex: none; display: inline-grid; place-items: center;
-    width: 1.45rem; height: 1.45rem; border-radius: 50%;
-    background: var(--gorse); color: var(--on-gorse); border: 1.4px solid var(--ink);
-    font-size: 0.78rem; font-weight: 780; line-height: 1;
-  }
-  .key span { color: var(--steel); line-height: 1.35; }
-  .key strong { color: var(--ink); font-weight: 680; }
-  .title-block {
-    position: relative;
-    display: grid; grid-template-columns: 2fr 1fr 1fr;
-    margin: 1.25rem calc(8px - clamp(1rem, 3vw, 1.75rem)) 0;
-    margin-bottom: 1px;
-    border-top: 1px solid var(--rule);
-    font-size: 0.72rem; line-height: 1.3; color: var(--steel);
-    background: color-mix(in srgb, var(--sheet) 80%, transparent);
-    border-radius: 0 0 5px 5px;
-  }
-  .title-block div { padding: 0.6rem 0.9rem 0.75rem; }
+  .hatch-line { stroke: var(--silver); stroke-width: 0.9; }
+  .d-outline { fill: none; stroke: var(--sea); stroke-width: 1.6; stroke-linejoin: miter; }
+  .d-centre { stroke: var(--steel); stroke-width: 0.7; stroke-dasharray: 10 3 2 3; }
+  .d-dim { stroke: var(--steel); stroke-width: 0.8; fill: none; }
+  .d-ext { stroke: var(--steel); stroke-width: 0.6; }
+  .d-arrow { fill: var(--steel); }
+  .d-text { fill: var(--steel); font-size: 13px; font-weight: 400; font-family: inherit; letter-spacing: 0.04em; }
+  .d-leader { stroke: var(--sea); stroke-width: 0.8; fill: none; }
+  .d-dot { fill: var(--sea); }
+  .d-balloon { fill: var(--sheet); stroke: var(--sea); stroke-width: 1; }
+  .d-num { fill: var(--sea); font-size: 12.5px; font-weight: 500; font-family: inherit; }
+  .key { list-style: none; margin: 0.75rem 0 0; padding: 0 0.25rem; display: grid; gap: 0.5rem; font-size: 0.93rem; position: relative; }
+  .key li { display: flex; gap: 0.75rem; align-items: center; }
+  .key b { flex: none; display: inline-grid; place-items: center; width: 1.4rem; height: 1.4rem; border-radius: 50%; border: 1px solid var(--sea); color: var(--sea); font-size: 0.75rem; font-weight: 500; line-height: 1; background: var(--sheet); }
+  .key span { color: var(--steel); line-height: 1.4; }
+  .key strong { color: var(--ink); font-weight: 500; }
+  .title-block { position: relative; display: grid; grid-template-columns: 2fr 1fr 1fr; margin: 1.25rem calc(8px - clamp(1rem, 3vw, 1.75rem)) 1px;
+    border-top: 1px solid var(--rule); font-size: 0.7rem; line-height: 1.3; color: var(--steel); background: var(--sheet); }
+  .title-block div { padding: 0.55rem 0.9rem 0.7rem; }
   .title-block div + div { border-left: 1px solid var(--rule); }
-  .title-block small { display: block; font-size: 0.68rem; opacity: 0.85; }
-  .title-block span { display: block; color: var(--ink); font-weight: 650; font-size: 0.8rem; font-stretch: 108%; }
-
+  .title-block small { display: block; font-size: 0.66rem; letter-spacing: 0.04em; }
+  .title-block span { display: block; color: var(--ink); font-weight: 500; font-size: 0.78rem; }
   @media (prefers-reduced-motion: no-preference) {
-    .d-outline { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.2s cubic-bezier(.4,0,.2,1) 0.25s forwards; }
-    .d-fill, .d-notes { opacity: 0; animation: fade 0.6s ease-out forwards; }
-    .d-fill { animation-delay: 1.2s; }
-    .d-notes { animation-delay: 1.5s; }
+    .d-outline { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.4s cubic-bezier(.4,0,.2,1) 0.2s forwards; }
+    .d-fill, .d-notes { opacity: 0; animation: fade 0.7s ease-out forwards; }
+    .d-fill { animation-delay: 1.3s; } .d-notes { animation-delay: 1.6s; }
   }
   @keyframes draw { to { stroke-dashoffset: 0; } }
   @keyframes fade { to { opacity: 1; } }
 
   /* Sections */
-  .section { padding-block: clamp(4rem, 9vw, 7rem); }
-  .section.alt { background: var(--surface); }
-  .section-head { margin-bottom: clamp(2rem, 4vw, 3rem); }
-  h2 {
-    margin: 0 0 1rem;
-    font-size: clamp(1.7rem, 1rem + 2.3vw, 2.6rem);
-    line-height: 1.06;
-    font-weight: 760;
-    font-stretch: 116%;
-    letter-spacing: -0.018em;
-    max-width: 18em;
-    text-wrap: balance;
-  }
-  h3 { margin: 0 0 0.35rem; font-size: 1.12rem; line-height: 1.3; font-weight: 720; font-stretch: 110%; letter-spacing: -0.005em; }
-  .muted { color: var(--steel); }
-  .section-head p { font-size: 1.125rem; margin: 0; }
+  .section { padding-block: clamp(4.5rem, 10vw, 7.5rem); border-top: 1px solid var(--rule); }
+  .section.alt { background: var(--sheet); }
+  .section-head { margin-bottom: clamp(2.25rem, 4vw, 3.25rem); }
+  .section-head p { font-size: 1.1rem; font-weight: 300; margin: 0; color: var(--steel); }
+  .split { display: grid; gap: 2rem 5rem; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 56rem) { .split { grid-template-columns: 0.8fr 1.2fr; } }
 
-  /* Pains */
-  .pain-grid { display: grid; gap: 2rem 4rem; grid-template-columns: 1fr; align-items: start; }
-  @media (min-width: 56rem) { .pain-grid { grid-template-columns: 0.8fr 1.2fr; } }
   .pains { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
-  .pains li {
-    position: relative; padding: 1rem 0 1rem 2rem; font-size: 1.125rem; line-height: 1.5;
-    border-bottom: 1px solid var(--rule);
-  }
-  .pains li::before {
-    content: ""; position: absolute; left: 0; top: 1.62rem;
-    width: 0.9rem; height: 0.5rem; background: var(--gorse); border-radius: 1px;
-  }
-  .pain-note { margin-top: 1.5rem; font-size: 1.05rem; }
+  .pains li { position: relative; padding: 1.05rem 0 1.05rem 2.1rem; font-size: 1.1rem; font-weight: 300; line-height: 1.5; border-bottom: 1px solid var(--rule); }
+  .pains li::before { content: ""; position: absolute; left: 0.2rem; top: 1.35rem; width: 1px; height: 0.9rem; background: var(--sea); box-shadow: 5px 0.3rem 0 0 var(--sea), 10px 0 0 0 var(--sea); }
 
-  /* Covers */
-  .covers { display: grid; gap: 2.5rem 3rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
-  .cover { display: grid; grid-template-columns: 2.75rem 1fr; gap: 0 1rem; align-items: start; }
-  .icon {
-    width: 2.75rem; height: 2.75rem; border-radius: 8px;
-    display: grid; place-items: center;
-    background: var(--sheet); border: 1px solid var(--rule);
-  }
-  .icon svg { width: 1.45rem; height: 1.45rem; fill: none; stroke: var(--sea); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .covers { display: grid; gap: 2.75rem 3.5rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+  .cover { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+  .cover svg { width: 1.75rem; height: 1.75rem; fill: none; stroke: var(--sea); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 0.9rem; }
   .cover p { margin: 0; color: var(--steel); }
 
-  /* About */
-  .about { display: grid; gap: 1.5rem 4rem; grid-template-columns: 1fr; align-items: start; }
-  @media (min-width: 56rem) { .about { grid-template-columns: 0.85fr 1.15fr; } }
-  .about .big { font-size: clamp(1.2rem, 1rem + 0.7vw, 1.45rem); line-height: 1.5; color: var(--ink); font-weight: 450; }
-  .about p { font-size: 1.1rem; }
-  .sign { display: flex; align-items: center; gap: 0.85rem; margin-top: 1.5rem; }
-  .sign .mono {
-    width: 2.75rem; height: 2.75rem; border-radius: 50%; display: grid; place-items: center;
-    background: var(--ink); color: var(--paper); font-weight: 780; font-stretch: 115%;
-  }
-  .sign strong { display: block; font-weight: 700; line-height: 1.2; }
+  .demo { display: grid; gap: 2.5rem 5rem; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 56rem) { .demo { grid-template-columns: 1fr 1fr; } }
+  .demo p { font-size: 1.1rem; font-weight: 300; }
+  .demo .fine { font-size: 0.93rem; color: var(--steel); margin-top: 1.1rem; }
+  .try { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .try li { border-bottom: 1px solid var(--rule); }
+  .try a { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; padding: 1.15rem 0.25rem; color: var(--ink); text-decoration: none; }
+  .try a:hover b { color: var(--sea); text-decoration: underline; text-underline-offset: 0.22em; }
+  .try b { display: block; font-weight: 500; }
+  .try span { display: block; color: var(--steel); font-size: 0.95rem; line-height: 1.5; margin-top: 0.15rem; }
+  .try svg { width: 1.1rem; height: 1.1rem; stroke: var(--sea); fill: none; stroke-width: 1.3; }
+
+  .about .big { font-size: clamp(1.25rem, 1rem + 0.8vw, 1.6rem); font-weight: 300; line-height: 1.5; color: var(--ink); max-width: 30em; }
+  .sign { display: flex; align-items: center; gap: 0.9rem; margin-top: 1.75rem; }
+  .sign .mono { width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid var(--sea); color: var(--sea); display: grid; place-items: center; font-weight: 400; font-size: 1.05rem; }
+  .sign strong { display: block; font-weight: 500; line-height: 1.25; }
   .sign span { color: var(--steel); font-size: 0.95rem; }
 
-  /* Steps */
-  .steps {
-    list-style: none; margin: 0; padding: 0; counter-reset: step;
-    display: grid; gap: 2.25rem 2.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  }
-  .steps li { counter-increment: step; position: relative; border-top: 2px solid var(--rule); padding-top: 1.25rem; }
-  .steps li::after { content: ""; position: absolute; top: -2px; left: 0; width: 2.75rem; height: 2px; background: var(--gorse); }
-  .steps li::before {
-    content: counter(step);
-    display: block; margin-bottom: 0.6rem;
-    font-size: 2.4rem; line-height: 1; font-weight: 800; font-stretch: 125%;
-    color: var(--sea); font-variant-numeric: tabular-nums;
-  }
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 2.5rem 3rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+  .steps li { counter-increment: step; border-top: 1px solid var(--sea); padding-top: 1.1rem; }
+  .steps li::before { content: counter(step, decimal-leading-zero); display: block; margin-bottom: 0.9rem; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.08em; color: var(--sea); }
   .steps p { margin: 0; color: var(--steel); }
 
-  /* Demo */
-  .btn.ghost { background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); box-shadow: none; }
-  .btn.ghost:hover { border-color: var(--ink); }
-  .head-right { display: flex; align-items: center; gap: 1rem; }
-  .head-demo { font-weight: 650; font-size: 0.95rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
-  .head-demo:hover { text-decoration: underline; text-underline-offset: 0.2em; }
-  @media (max-width: 30rem) { .head-demo { display: none; } }
-  .demo { display: grid; gap: 2rem 4rem; grid-template-columns: 1fr; align-items: center; }
-  @media (min-width: 56rem) { .demo { grid-template-columns: 1fr 1fr; } }
-  .demo p { font-size: 1.1rem; }
-  .demo .fine { font-size: 0.95rem; color: var(--steel); margin-top: 1rem; }
-  .try { list-style: none; margin: 0; padding: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; box-shadow: var(--shadow); overflow: hidden; }
-  .try li { border-bottom: 1px solid var(--rule); }
-  .try li:last-child { border-bottom: 0; }
-  .try a { display: grid; grid-template-columns: 1.1rem 1fr; gap: 0.85rem; padding: 1rem 1.25rem; color: var(--ink); text-decoration: none; }
-  .try a:hover { background: var(--surface); }
-  .try i { width: 0.8rem; height: 0.5rem; margin-top: 0.55rem; border-radius: 1px; background: var(--gorse); }
-  .try b { display: block; font-weight: 700; font-stretch: 108%; }
-  .try span { color: var(--steel); font-size: 0.95rem; line-height: 1.45; }
-
-  /* Pricing */
-  .price {
-    display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
-    box-shadow: var(--shadow); max-width: 54rem;
-  }
-  .price > div { background: var(--sheet); padding: clamp(1.5rem, 3vw, 2rem); }
-  .price small { display: block; color: var(--steel); font-size: 0.9rem; margin-bottom: 0.35rem; }
-  .price h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+  .price { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); max-width: 56rem; }
+  .price > div { padding: 1.75rem 2rem 1.9rem 0; }
+  .price > div + div { padding-left: 2rem; border-left: 1px solid var(--rule); }
+  @media (max-width: 37rem) { .price > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); } }
+  .price small { display: block; color: var(--steel); font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .price h3 { font-size: 1.35rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--sea); }
   .price p { margin: 0; color: var(--steel); }
 
-  /* Contact */
-  .contact {
-    background-color: var(--band-bg); color: var(--band-fg);
-    background-image:
-      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-    background-size: 22px 22px;
-  }
+  .contact { background: var(--band); color: var(--band-fg); border-top: 0; position: relative; overflow: hidden; }
+  .contact .wrap { position: relative; z-index: 1; }
   .contact h2 { color: var(--band-fg); }
-  .contact p { color: var(--band-muted); font-size: 1.125rem; }
-  .mail {
-    display: inline-block; margin: 0.75rem 0 2rem;
-    color: var(--gorse); font-weight: 760;
-    font-size: clamp(1.1rem, 0.5rem + 2.8vw, 2.6rem); line-height: 1.15; letter-spacing: -0.01em;
-    overflow-wrap: anywhere; text-decoration-thickness: 2px;
-  }
-  .contact a:focus-visible, .contact .btn:focus-visible { outline-color: var(--gorse); }
+  .contact p { color: var(--band-muted); font-size: 1.1rem; font-weight: 300; }
+  .band-mark { position: absolute; right: -6rem; top: 50%; transform: translateY(-50%); width: min(38rem, 70vw); color: var(--band-fg); opacity: 0.13; pointer-events: none; }
+  .mail { display: inline-block; margin: 0.75rem 0 2.25rem; color: var(--band-fg); font-weight: 300; font-size: clamp(1.35rem, 0.7rem + 3vw, 2.9rem); line-height: 1.15; letter-spacing: -0.015em;
+    overflow-wrap: anywhere; text-decoration: none; border-bottom: 1px solid var(--band-rule); padding-bottom: 0.3rem; }
+  .mail:hover { border-bottom-color: var(--band-fg); }
+  .contact .btn { background: var(--band-fg); color: var(--band); border-color: var(--band-fg); }
+  .contact .btn:hover { background: transparent; color: var(--band-fg); }
+  .contact a:focus-visible, .contact .btn:focus-visible { outline-color: var(--band-fg); }
 
-  .site-foot { background: var(--band-bg); color: var(--band-muted); font-size: 0.9rem; padding-block: 1.5rem 2rem; border-top: 1px solid rgba(255,255,255,0.08); }
+  .site-foot { background: var(--band); color: var(--band-muted); font-size: 0.9rem; padding-block: 1.6rem 2rem; border-top: 1px solid var(--band-rule); }
   .site-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; }
   .site-foot p { margin: 0; }
   .site-foot a { color: var(--band-fg); }
@@ -332,11 +192,8 @@
 
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="/" aria-label="Mannin Systems, home">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1C2530"/><path fill="#E0A21B" fill-rule="evenodd" d="M6 9h20v14H6z M9 12v8h6v-8z M17 12v8h6v-8z"/></svg>
-      Mannin Systems
-    </a>
-    <div class="head-right"><a class="head-demo" href="/demo">Try the demo</a><a class="head-link" href="#contact">Get in touch</a></div>
+    <a class="brand" href="/" aria-label="Mannin Systems, home"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M55 8.299 A42 42 0 1 1 45 8.299 L45 14.299 L55 14.299 Z" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linejoin="miter"></path><g transform="translate(26 26) scale(.48)"><path d="M12 88 L12 12 L26 12 L50 44 L74 12 L88 12 L88 88 L74 88 L74 36 L50 68 L26 36 L26 88 Z" fill="currentColor"></path></g></svg><span>MANNIN <b>SYSTEMS</b></span></a>
+    <nav class="nav" aria-label="Main"><a class="hide-sm" href="#how">How it works</a><a class="hide-sm" href="/demo">Demo</a><a class="pill" href="#contact">Get in touch</a></nav>
   </div>
 </header>
 
@@ -345,58 +202,37 @@
     <div class="wrap">
       <div>
         <h1>Production software for manufacturers who've outgrown the spreadsheet</h1>
-        <p class="lede">Simple, bespoke MRP systems for small extruders, fabricators and light engineering firms. Orders, materials, recipes, tooling and stock, set up around the way your shop already works.</p>
+        <p class="lede">Bespoke MRP systems for small extruders, fabricators and light engineering firms. Orders, materials, recipes, tooling and stock, set up around the way your shop already works.</p>
         <div class="cta-row">
-          <a class="btn" href="mailto:chris@manninsystems.co.uk">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
-            Email Chris
-          </a>
-          <a class="btn ghost" href="/demo">Try the demo</a>
-          <span class="where">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
-            Based in the Isle of Man
-          </span>
+          <a class="btn" href="/demo">Try the working demo</a>
+          <a class="btn ghost" href="mailto:info@manninsystems.co.uk">Get in touch</a>
         </div>
+        <div class="where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Based in the Isle of Man, working across the island and the UK</div>
       </div>
 
       <figure class="sheet">
         <svg viewBox="0 0 400 345" role="img" aria-labelledby="dwg-title">
           <title id="dwg-title">Technical drawing of an extruded profile, annotated with its recipe, die and job details</title>
           <defs>
-            <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="0" y1="0" x2="0" y2="7" class="hatch-line"/>
-            </pattern>
-            <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-              <path d="M0 1 L10 5 L0 9 z" class="d-arrow"/>
-            </marker>
+            <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="hatch-line"/></pattern>
+            <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1.5 L10 5 L0 8.5 z" class="d-arrow"/></marker>
           </defs>
-
           <path class="d-fill" fill-rule="evenodd" d="M90 110 H310 V255 H350 V270 H90 Z M110 130 V250 H192 V130 Z M208 130 V250 H290 V130 Z"/>
           <path class="d-outline" pathLength="1" d="M90 110 H310 V255 H350 V270 H90 Z M110 130 V250 H192 V130 Z M208 130 V250 H290 V130 Z"/>
-
           <g class="d-notes">
-            <path class="d-centre" d="M200 96 V284"/>
+            <path class="d-centre" d="M200 96 V284 M76 190 H324"/>
             <path class="d-ext" d="M90 104 V62 M310 104 V62"/>
             <path class="d-dim" d="M91 72 H309" marker-start="url(#arr)" marker-end="url(#arr)"/>
             <text class="d-text" x="200" y="64" text-anchor="middle">220</text>
             <path class="d-ext" d="M84 110 H36 M84 270 H36"/>
             <path class="d-dim" d="M46 111 V269" marker-start="url(#arr)" marker-end="url(#arr)"/>
             <text class="d-text" x="36" y="190" text-anchor="middle" transform="rotate(-90 36 190)">160</text>
-
-            <path class="d-leader" d="M80 311 L100 263"/>
-            <circle class="d-dot" cx="100" cy="263" r="3"/>
-            <circle class="d-balloon" cx="74" cy="324" r="14"/>
-            <text class="d-num" x="74" y="329" text-anchor="middle">1</text>
-
-            <path class="d-leader" d="M350 60 L301 118"/>
-            <circle class="d-dot" cx="301" cy="118" r="3"/>
-            <circle class="d-balloon" cx="360" cy="48" r="14"/>
-            <text class="d-num" x="360" y="53" text-anchor="middle">2</text>
-
-            <path class="d-leader" d="M358 311 L338 264"/>
-            <circle class="d-dot" cx="338" cy="264" r="3"/>
-            <circle class="d-balloon" cx="364" cy="324" r="14"/>
-            <text class="d-num" x="364" y="329" text-anchor="middle">3</text>
+            <path class="d-leader" d="M81 312 L100 263"/><circle class="d-dot" cx="100" cy="263" r="2.2"/>
+            <circle class="d-balloon" cx="75" cy="325" r="13"/><text class="d-num" x="75" y="329.5" text-anchor="middle">1</text>
+            <path class="d-leader" d="M351 58 L301 118"/><circle class="d-dot" cx="301" cy="118" r="2.2"/>
+            <circle class="d-balloon" cx="360" cy="48" r="13"/><text class="d-num" x="360" y="52.5" text-anchor="middle">2</text>
+            <path class="d-leader" d="M357 312 L338 264"/><circle class="d-dot" cx="338" cy="264" r="2.2"/>
+            <circle class="d-balloon" cx="363" cy="325" r="13"/><text class="d-num" x="363" y="329.5" text-anchor="middle">3</text>
           </g>
         </svg>
         <figcaption>
@@ -416,7 +252,7 @@
   </section>
 
   <section class="section alt">
-    <div class="wrap pain-grid">
+    <div class="wrap split">
       <div>
         <h2>Sound familiar?</h2>
         <p class="muted">The big-name systems are priced and built for large plants. Mannin Systems is for everyone else.</p>
@@ -435,33 +271,15 @@
     <div class="wrap">
       <div class="section-head">
         <h2>What your system can cover</h2>
-        <p class="muted">Each system is built for one business, so it covers what you need and leaves out what you don't. Typical areas include:</p>
+        <p>Each system is built for one business, so it covers what you need and leaves out what you don't.</p>
       </div>
       <div class="covers">
-        <div class="cover">
-          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="1.5"/><path d="M9 4V2.8h6V4M8.5 9.5h7M8.5 13h7M8.5 16.5h4"/></svg></span>
-          <div><h3>Orders and scheduling</h3><p>Customer orders turned into jobs, with a clear view of what's running, what's next and what's late.</p></div>
-        </div>
-        <div class="cover">
-          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l-6 8v5l-4 3v-8z"/></svg></span>
-          <div><h3>Materials and recipes</h3><p>Blends, masterbatch and regrind ratios for each product, with material usage worked out per job.</p></div>
-        </div>
-        <div class="cover">
-          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="1"/><path d="M7 9.5h4.2v5H7zM12.8 9.5H17v5h-4.2z"/></svg></span>
-          <div><h3>Tooling</h3><p>Dies, moulds and fixtures: where they are, what they've run and when they're due for maintenance.</p></div>
-        </div>
-        <div class="cover">
-          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5h8v7h-8zM12.5 12.5h8v7h-8zM8 4.5h8v8H8z"/></svg></span>
-          <div><h3>Stock</h3><p>Raw material, work in progress and finished goods, updated as work is booked rather than at month end.</p></div>
-        </div>
-        <div class="cover">
-          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="6" r="2"/><circle cx="18.5" cy="12" r="2"/><circle cx="5.5" cy="18" r="2"/><path d="M7.5 6h4v6h5M11.5 12v6h-4"/></svg></span>
-          <div><h3>Traceability</h3><p>Which batch of material went into which job, for when a customer comes back with a question.</p></div>
-        </div>
-        <div class="cover">
-          <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5h17M6.5 20.5v-6M11 20.5v-11M15.5 20.5v-4M19.5 20.5v-15"/></svg></span>
-          <div><h3>Reporting</h3><p>Output, scrap and downtime in plain figures you can act on.</p></div>
-        </div>
+        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2.8h6V4M8.5 9.5h7M8.5 13h7M8.5 16.5h4"/></svg><h3>Orders and scheduling</h3><p>Customer orders turned into jobs, with a clear view of what's running, what's next and what's late.</p></div>
+        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16l-6 8v5l-4 3v-8z"/></svg><h3>Materials and recipes</h3><p>Blends, masterbatch and regrind ratios for each product, with material usage worked out per job.</p></div>
+        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/><path d="M9 9.5h6v5H9z"/></svg><h3>Tooling</h3><p>Dies, moulds and fixtures: where they are, what they've run and when they're due for maintenance.</p></div>
+        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5h8v7h-8zM12.5 12.5h8v7h-8zM8 4.5h8v8H8z"/></svg><h3>Stock</h3><p>Raw material, work in progress and finished goods, updated as work is booked rather than at month end.</p></div>
+        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="6" r="2"/><circle cx="18.5" cy="12" r="2"/><circle cx="5.5" cy="18" r="2"/><path d="M7.5 6h4v6h5M11.5 12v6h-4"/></svg><h3>Traceability</h3><p>Which batch of material went into which job, for when a customer comes back with a question.</p></div>
+        <div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5h17M6.5 20.5v-6M11 20.5v-11M15.5 20.5v-4M19.5 20.5v-15"/></svg><h3>Reporting</h3><p>Output, scrap and downtime in plain figures you can act on.</p></div>
       </div>
     </div>
   </section>
@@ -470,38 +288,35 @@
     <div class="wrap demo">
       <div>
         <h2>Try it yourself</h2>
-        <p>This is a working system for Brackwater Extrusions, a made-up two-line PVC extruder with three weeks of orders, jobs and stock movements in it. Nothing to install and no sign-up: just click around.</p>
+        <p>A working system for Brackwater Extrusions, a made-up two-line PVC extruder with three weeks of orders, jobs and stock movements in it. Nothing to install and no sign-up.</p>
         <a class="btn" href="/demo">Open the demo</a>
         <p class="fine">Best on a computer, but it works on a phone too. All companies and figures are invented.</p>
       </div>
       <ul class="try">
-        <li><a href="/demo#/overview"><i></i><div><b>See what needs attention today</b><span>A material shortage, a late order and a die due a polish, spotted without opening a spreadsheet.</span></div></a></li>
-        <li><a href="/demo#/trace/FG-1025"><i></i><div><b>Trace a batch back to its supplier</b><span>Pick any finished lot and follow it back to the raw material deliveries it was made from.</span></div></a></li>
-        <li><a href="/demo#/jobs/1029"><i></i><div><b>Open a job sheet</b><span>Materials used by lot, scrap, regrind and yield for a job that had part of its run held for QA.</span></div></a></li>
-        <li><a href="/demo#/ledger"><i></i><div><b>See how mistakes are put right</b><span>Every stock movement is kept. A mis-keyed delivery is corrected with a reversing entry, not overwritten.</span></div></a></li>
+        <li><a href="/demo#/overview"><div><b>See what needs attention today</b><span>A material shortage, a late order and a die due a polish, spotted without opening a spreadsheet.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="/demo#/trace/FG-1025"><div><b>Trace a batch back to its supplier</b><span>Follow any finished lot back to the raw material deliveries it was made from.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="/demo#/jobs/1029"><div><b>Open a job sheet</b><span>Materials by lot, scrap, regrind and yield for a job with part of its run held for QA.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="/demo#/ledger"><div><b>See how mistakes are put right</b><span>Every stock movement is kept. A mis-keyed delivery is corrected with a reversing entry, not overwritten.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
       </ul>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap about">
+    <div class="wrap split about">
       <h2>Built by someone from the shop floor</h2>
       <div>
         <p class="big">I know what a changeover costs, why regrind ratios matter, and how much of a factory runs on knowledge that was never written down.</p>
         <p class="muted">My background is in extrusion manufacturing, process improvement and development, not software sales. That means less time explaining your business to me, and a system that uses your names for your products and processes.</p>
-        <div class="sign">
-          <span class="mono" aria-hidden="true">C</span>
-          <div><strong>Chris</strong><span>Founder, Mannin Systems</span></div>
-        </div>
+        <div class="sign"><span class="mono" aria-hidden="true">C</span><div><strong>Chris</strong><span>Founder, Mannin Systems</span></div></div>
       </div>
     </div>
   </section>
 
-  <section class="section alt">
+  <section class="section alt" id="how">
     <div class="wrap">
       <div class="section-head">
         <h2>How it works</h2>
-        <p class="muted">No big-bang switchover. You keep working the way you do now until the new system has proved itself.</p>
+        <p>No big-bang switchover. You keep working the way you do now until the new system has proved itself.</p>
       </div>
       <ol class="steps">
         <li><h3>Talk it through</h3><p>A call or a visit to see how you work now: orders, materials, the spreadsheets and the whiteboard.</p></li>
@@ -516,34 +331,22 @@
     <div class="wrap">
       <div class="section-head">
         <h2>What it costs</h2>
-        <p class="muted">Straightforward pricing, agreed in writing before any work starts.</p>
+        <p>Straightforward pricing, agreed in writing before any work starts.</p>
       </div>
       <div class="price">
-        <div>
-          <small>Up front</small>
-          <h3>Design and set-up</h3>
-          <p>A fixed price for building your system, based on what we agree it needs to cover.</p>
-        </div>
-        <div>
-          <small>Monthly</small>
-          <h3>Hosting and support</h3>
-          <p>Secure hosting, backups and support, so the system keeps running without you having to think about it.</p>
-        </div>
+        <div><small>Up front</small><h3>Design and set-up</h3><p>A fixed price for building your system, based on what we agree it needs to cover.</p></div>
+        <div><small>Monthly</small><h3>Hosting and support</h3><p>Secure hosting, backups and support, so the system keeps running without you having to think about it.</p></div>
       </div>
     </div>
   </section>
 
   <section class="section contact" id="contact">
+    <svg class="band-mark" viewBox="0 0 100 100" aria-hidden="true"><defs><pattern id="hband" width="2" height="2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="2" stroke="currentColor" stroke-width="0.3"></line></pattern></defs><path d="M83.50 50.00 L90.00 50.00 A40 40 0 0 1 50.00 90.00 L50.00 83.50 A33.5 33.5 0 0 0 83.50 50.00 Z" fill="url(#hband)" stroke="currentColor" stroke-width="0.3"></path><line x1="3" y1="50" x2="31" y2="50" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><line x1="50" y1="3" x2="50" y2="31" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><line x1="69" y1="50" x2="97" y2="50" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><line x1="50" y1="69" x2="50" y2="97" stroke="currentColor" stroke-width="0.3" stroke-dasharray="5.14 1.20 0.77 1.20"></line><path d="M53 10.113 A40 40 0 1 1 47 10.113 L47 13.313 L53 13.313 Z" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linejoin="miter"></path><circle cx="50" cy="50" r="33.5" fill="none" stroke="currentColor" stroke-width="0.4"></circle><circle cx="71.21" cy="71.21" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="66.71" y1="71.21" x2="75.71" y2="71.21" stroke="currentColor" stroke-width="0.27"></line><line x1="71.21" y1="66.71" x2="71.21" y2="75.71" stroke="currentColor" stroke-width="0.27"></line><circle cx="28.79" cy="71.21" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="24.29" y1="71.21" x2="33.29" y2="71.21" stroke="currentColor" stroke-width="0.27"></line><line x1="28.79" y1="66.71" x2="28.79" y2="75.71" stroke="currentColor" stroke-width="0.27"></line><circle cx="28.79" cy="28.79" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="24.29" y1="28.79" x2="33.29" y2="28.79" stroke="currentColor" stroke-width="0.27"></line><line x1="28.79" y1="24.29" x2="28.79" y2="33.29" stroke="currentColor" stroke-width="0.27"></line><circle cx="71.21" cy="28.79" r="2.6" fill="none" stroke="currentColor" stroke-width="0.6"></circle><line x1="66.71" y1="28.79" x2="75.71" y2="28.79" stroke="currentColor" stroke-width="0.27"></line><line x1="71.21" y1="24.29" x2="71.21" y2="33.29" stroke="currentColor" stroke-width="0.27"></line><g transform="translate(35.00 35.00) scale(0.3)"><path d="M12 88 L12 12 L26 12 L50 44 L74 12 L88 12 L88 88 L74 88 L74 36 L50 68 L26 36 L26 88 Z" fill="none" stroke="currentColor" stroke-width="2.67" stroke-linejoin="miter"></path></g><path d="M37.10 62.90 L37.10 37.10 L43.55 37.10 L50.00 45.70 L56.45 37.10 L62.90 37.10 L62.90 62.90 L55.70 62.90 L55.70 50.30 L50.00 57.90 L44.30 50.30 L44.30 62.90 Z" fill="none" stroke="currentColor" stroke-width="0.30" stroke-dasharray="1.1 0.9" stroke-linejoin="miter"></path></svg>
     <div class="wrap">
-      <h2>Tell me what you're running on now</h2>
-      <p>A few lines about what you make and how you plan production today is plenty to start with. I'll reply personally.</p>
-      <a class="mail" href="mailto:chris@manninsystems.co.uk">chris@manninsystems.co.uk</a>
-      <div>
-        <a class="btn" href="mailto:chris@manninsystems.co.uk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
-          Email Chris
-        </a>
-      </div>
+      <h2>Tell us what you're running on now</h2>
+      <p>A few lines about what you make and how you plan production today is plenty to start with. You'll get a personal reply.</p>
+      <a class="mail" href="mailto:info@manninsystems.co.uk">info@manninsystems.co.uk</a>
+      <div><a class="btn" href="mailto:info@manninsystems.co.uk">Get in touch</a></div>
     </div>
   </section>
 </main>
@@ -551,7 +354,7 @@
 <footer class="site-foot">
   <div class="wrap">
     <p>&copy; 2026 Mannin Systems, Isle of Man</p>
-    <p><a href="mailto:chris@manninsystems.co.uk">chris@manninsystems.co.uk</a></p>
+    <p><a href="mailto:info@manninsystems.co.uk">info@manninsystems.co.uk</a></p>
   </div>
 </footer>
 

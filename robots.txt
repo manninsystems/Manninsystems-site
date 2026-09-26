@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://manninsystems.co.uk/sitemap.xml

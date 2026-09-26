@@ -10,9 +10,18 @@
 <meta property="og:title" content="Mannin Systems | MRP Software for Small Manufacturers">
 <meta property="og:description" content="Bespoke production software for small manufacturers who've outgrown the spreadsheet. Based in the Isle of Man.">
 <meta property="og:url" content="https://manninsystems.co.uk/">
+<meta property="og:site_name" content="Mannin Systems">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://manninsystems.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Mannin Systems die plate mark on deep sea green">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F2F5F4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E2224" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23F2F5F4%22/%3E%3Cpath d=%22M55 8.299 A42 42 0 1 1 45 8.299 L45 14.299 L55 14.299 Z%22 fill=%22none%22 stroke=%22%23163A3C%22 stroke-width=%225.5%22 stroke-linejoin=%22miter%22%3E%3C/path%3E%3Cg transform=%22translate%2826 26%29 scale%28.48%29%22%3E%3Cpath d=%22M12 88 L12 12 L26 12 L50 44 L74 12 L88 12 L88 88 L74 88 L74 36 L50 68 L26 36 L26 88 Z%22 fill=%22%23163A3C%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23F2F5F4%22/%3E%3Cpath d=%22M55 8.299 A42 42 0 1 1 45 8.299 L45 14.299 L55 14.299 Z%22 fill=%22none%22 stroke=%22%23163A3C%22 stroke-width=%225.5%22 stroke-linejoin=%22miter%22%3E%3C/path%3E%3Cg transform=%22translate%2826 26%29 scale%28.48%29%22%3E%3Cpath d=%22M12 88 L12 12 L26 12 L50 44 L74 12 L88 12 L88 88 L74 88 L74 36 L50 68 L26 36 L26 88 Z%22 fill=%22%23163A3C%22%3E%3C/path%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
@@ -139,10 +148,14 @@
   .cover svg { width: 1.75rem; height: 1.75rem; fill: none; stroke: var(--sea); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 0.9rem; }
   .cover p { margin: 0; color: var(--steel); }
 
-  .demo { display: grid; gap: 2.5rem 5rem; grid-template-columns: 1fr; align-items: center; }
+  .demo { display: grid; gap: 2.5rem 5rem; grid-template-columns: 1fr; align-items: start; }
   @media (min-width: 56rem) { .demo { grid-template-columns: 1fr 1fr; } }
   .demo p { font-size: 1.1rem; font-weight: 300; }
   .demo .fine { font-size: 0.93rem; color: var(--steel); margin-top: 1.1rem; }
+  .freebies { display: grid; gap: 1.25rem 5rem; grid-template-columns: 1fr; align-items: start; margin-top: clamp(3rem, 6vw, 4.5rem); }
+  @media (min-width: 56rem) { .freebies { grid-template-columns: 1fr 1fr; } }
+  .freebies h3 { font-size: 1.4rem; font-weight: 300; color: var(--sea); margin: 0 0 0.5rem; line-height: 1.3; }
+  .freebies p { margin: 0; color: var(--steel); max-width: 30rem; }
   .try { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
   .try li { border-bottom: 1px solid var(--rule); }
   .try a { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; padding: 1.15rem 0.25rem; color: var(--ink); text-decoration: none; }
@@ -182,10 +195,19 @@
   .contact .btn:hover { background: transparent; color: var(--band-fg); }
   .contact a:focus-visible, .contact .btn:focus-visible { outline-color: var(--band-fg); }
 
-  .site-foot { background: var(--band); color: var(--band-muted); font-size: 0.9rem; padding-block: 1.6rem 2rem; border-top: 1px solid var(--band-rule); }
-  .site-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; }
+  .site-foot { background: var(--band); color: var(--band-muted); font-size: 0.93rem; padding-block: clamp(2.75rem, 5vw, 3.75rem) 2rem; border-top: 1px solid var(--band-rule); }
   .site-foot p { margin: 0; }
-  .site-foot a { color: var(--band-fg); }
+  .site-foot a { color: var(--band-fg); text-decoration: none; }
+  .site-foot a:hover { text-decoration: underline; text-underline-offset: 0.22em; }
+  .foot-grid { display: grid; gap: 2.25rem 1.5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); padding-bottom: 2.5rem; }
+  .foot-grid > div:first-child { grid-column: 1 / -1; max-width: 24rem; }
+  @media (min-width: 62rem) { .foot-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; } .foot-grid > div:first-child { grid-column: auto; } }
+  .foot-brand { display: flex; align-items: center; gap: 0.6rem; color: var(--band-fg); letter-spacing: 0.06em; font-size: 0.95rem; margin-bottom: 0.7rem; }
+  .foot-brand svg { width: 1.7rem; height: 1.7rem; flex: none; }
+  .foot-brand b { font-weight: 300; }
+  .foot-grid h2 { font-size: 0.95rem; font-weight: 500; color: var(--band-fg); margin: 0 0 0.75rem; letter-spacing: 0; line-height: 1.4; }
+  .foot-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+  .foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; padding-top: 1.4rem; border-top: 1px solid var(--band-rule); font-size: 0.88rem; }
 
   /* Live mini demo */
   .live { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0; align-items: stretch; }
@@ -337,6 +359,8 @@
   "@type": "Organization",
   "name": "Mannin Systems",
   "url": "https://manninsystems.co.uk/",
+  "logo": "https://manninsystems.co.uk/mannin-icon-512.png",
+  "image": "https://manninsystems.co.uk/og-image.png",
   "email": "info@manninsystems.co.uk",
   "description": "Bespoke production and MRP software for small extruders, fabricators and light engineering firms.",
   "areaServed": ["Isle of Man", "United Kingdom"]
@@ -485,6 +509,17 @@
         <a class="trade" href="/extruders"><svg class="ic" viewBox="0 0 52 52" aria-hidden="true"><path d="M6 14h34v22h6v3H6z"/><path d="M10 18v17h12V18zM26 18v17h10V18z"/></svg><h3>Extruders</h3><p>Recipes, regrind, dies, co-ex and the metres-to-kilos maths.</p><span class="go">For extruders <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         <a class="trade" href="/fabricators"><svg class="ic" viewBox="0 0 52 52" aria-hidden="true"><path d="M6 38h20l12-20h8"/><path d="M6 42h20.8l12-20H46"/><path d="M26 38v4"/></svg><h3>Fabricators</h3><p>Jobs by drawing and revision, material certs, offcuts and subcontract finishing.</p><span class="go">For fabricators <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         <a class="trade" href="/light-engineering"><svg class="ic" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="9"/><path d="M26 8v6M26 38v6M8 26h6M38 26h6M13.3 13.3l4.2 4.2M34.5 34.5l4.2 4.2M13.3 38.7l4.2-4.2M34.5 17.5l4.2-4.2"/><circle cx="26" cy="26" r="3"/></svg><h3>Light engineering</h3><p>Routings across machines, setup and run times, bar stock and inspection records.</p><span class="go">For engineering firms <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <div class="freebies">
+        <div>
+          <h3>Free Excel templates</h3>
+          <p>One for each trade, useful on their own whether or not you ever talk to us. No sign-up, just download.</p>
+        </div>
+        <ul class="try">
+          <li><a href="/Mannin-Regrind-Recipe-Tracker.xlsx" download><div><b>Regrind and recipe tracker</b><span>For extruders: regrind stock, recipe limits and the virgin material you're saving.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a></li>
+          <li><a href="/Mannin-Job-Costing-Sheet.xlsx" download><div><b>Job costing sheet</b><span>For fabricators: quoted price against actual material, labour and subcontract cost.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a></li>
+          <li><a href="/Mannin-Setup-Run-Time-Log.xlsx" download><div><b>Setup and run time log</b><span>For machine shops: actual setup and cycle times against what you quoted.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -661,8 +696,28 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    <p>&copy; 2026 Mannin Systems, Isle of Man</p>
-    <p><a href="mailto:info@manninsystems.co.uk">info@manninsystems.co.uk</a></p>
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M55 8.299 A42 42 0 1 1 45 8.299 L45 14.299 L55 14.299 Z" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linejoin="miter"></path><g transform="translate(26 26) scale(.48)"><path d="M12 88 L12 12 L26 12 L50 44 L74 12 L88 12 L88 88 L74 88 L74 36 L50 68 L26 36 L26 88 Z" fill="currentColor"></path></g></svg><span>MANNIN <b>SYSTEMS</b></span></p>
+        <p>Production software for small manufacturers, built in the Isle of Man for firms across the island and the UK.</p>
+      </div>
+      <nav aria-label="Trades">
+        <h2>Who it's for</h2>
+        <ul><li><a href="/extruders">Extruders</a></li><li><a href="/fabricators">Fabricators</a></li><li><a href="/light-engineering">Light engineering</a></li></ul>
+      </nav>
+      <nav aria-label="Get started">
+        <h2>Get started</h2>
+        <ul><li><a href="/demo">Working demo</a></li><li><a href="/#check">Free health check</a></li><li><a href="/#pricing">Pricing</a></li></ul>
+      </nav>
+      <div>
+        <h2>Free Excel templates</h2>
+        <ul><li><a href="/Mannin-Regrind-Recipe-Tracker.xlsx" download>Regrind and recipe tracker</a></li><li><a href="/Mannin-Job-Costing-Sheet.xlsx" download>Job costing sheet</a></li><li><a href="/Mannin-Setup-Run-Time-Log.xlsx" download>Setup and run time log</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <p>&copy; 2026 Mannin Systems, Isle of Man</p>
+      <p><a href="mailto:info@manninsystems.co.uk">info@manninsystems.co.uk</a></p>
+    </div>
   </div>
 </footer>
 

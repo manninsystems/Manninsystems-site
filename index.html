@@ -299,6 +299,19 @@
   .crumb { font-size: 0.9rem; color: var(--steel); margin-bottom: 1rem; }
   .crumb a { color: var(--steel); }
 
+
+  /* Manx red: used only as "red-pen markup" on drawings, markers and download arrows */
+  :root { --manx: #C8102E; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --manx: #F0566A; } }
+  :root[data-theme="dark"] { --manx: #F0566A; }
+  .d-leader { stroke: var(--manx); }
+  .d-dot { fill: var(--manx); }
+  .d-balloon { stroke: var(--manx); }
+  .d-num { fill: var(--manx); }
+  .key b { border-color: var(--manx); color: var(--manx); }
+  .pains li::before { background: var(--manx); box-shadow: 5px 0.3rem 0 0 var(--manx), 10px 0 0 0 var(--manx); }
+  .try svg { stroke: var(--manx); }
+  ::selection { background: color-mix(in srgb, var(--manx) 22%, transparent); }
 </style>
 <script type="application/ld+json">
 {

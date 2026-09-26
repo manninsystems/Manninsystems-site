@@ -341,6 +341,23 @@
   .die-log li > span:first-child { color: #5A6A76; }
   .die-log .next { background: #FAEFD3; margin: 0 -18px; padding: 9px 18px; border: 0; }
 
+  /* Label and scan trail */
+  .label { background: #fff; border-radius: 8px; padding: 12px 14px 12px; font-family: Arial, Helvetica, sans-serif; color: #111; box-shadow: var(--shadow), 0 0 0 1px rgba(0, 0, 0, 0.06); }
+  .lb-top { display: flex; justify-content: space-between; font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em; border-bottom: 1.5px solid #111; padding-bottom: 5px; }
+  .lb-id { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; margin-top: 6px; }
+  .lb-what { font-size: 12px; margin-top: 1px; }
+  .lb-row { display: grid; grid-template-columns: 0.8fr 0.9fr 1fr 1.3fr; gap: 6px; margin: 8px 0; padding: 6px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; font-size: 11.5px; font-weight: 700; }
+  .lb-row small { display: block; font-size: 8.5px; font-weight: 400; color: #444; }
+  .lb-codes { display: flex; gap: 12px; align-items: center; }
+  .lb-bc { flex: 1; height: 44px; }
+  .lb-qr { width: 60px; height: 60px; flex: none; }
+  .trail { list-style: none; margin: 0; padding: 0; }
+  .trail li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 8px; padding: 9px 13px; border-bottom: 1px solid #E3E8EA; font-size: 12px; }
+  .trail li:last-child { border-bottom: 0; }
+  .trail li > span { color: #5A6A76; }
+  .trail b { display: block; font-weight: 600; }
+  .trail li.bad { background: #FBF3F0; }
+  .trail li.bad b { color: #B04832; }
   /* Ledger */
   .led { overflow: hidden; }
   .led table { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -743,10 +760,45 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Software that knows its way round a factory</h2>
-        <p class="intro">Every system is built on the same engineered core, then set up for your shop, your products and your names for things. These are screens from the working demo.</p>
+        <p class="intro">Every system is built on the same engineered core, then set up for your shop, your products and your names for things. Here&rsquo;s some of what that looks like.</p>
       </div>
 
       <div class="feature">
+        <div>
+          <h3>Scan it once. Never key it again.</h3>
+          <p>Each work station prints a label for what it has just made, and it goes on the product, bundle or stillage. The next station scans it in. Nothing is typed twice, so keying mistakes stop at the source, and every scan records who, where and when against the right job and cost centre.</p>
+          <a class="go" href="mailto:info@manninsystems.co.uk?subject=Scan%20and%20label%20tracking">Ask to see it running <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="shot">
+          <div class="fit" style="--w:640;--h:330" data-w="640" data-h="330" data-min="0.5" role="img" aria-label="A product label printed at Line 1 for bundle FG-1037-04, and its scan trail from the line to stores and dispatch, with a wrong scan stopped">
+            <div class="cv ui" aria-hidden="true">
+              <div class="label" id="s-lbl" style="position:absolute;left:0;top:14px;width:292px">
+                <div class="lb-top"><span>BRACKWATER EXTRUSIONS</span><span>LINE 1</span></div>
+                <div class="lb-id">FG-1037-04</div>
+                <div class="lb-what">Glazing bead 18 mm, white</div>
+                <div class="lb-row"><span><small>Job</small>1037</span><span><small>Qty</small>250 m</span><span><small>Recipe</small>R-11 v2</span><span><small>Made</small>25/09 10:32</span></div>
+                <div class="lb-codes"><svg class="lb-bc" viewBox="0 0 150 34" preserveAspectRatio="none" aria-hidden="true"><g fill="#111"><rect x="0" y="0" width="2" height="34"/><rect x="4" y="0" width="1" height="34"/><rect x="7" y="0" width="1" height="34"/><rect x="10" y="0" width="3" height="34"/><rect x="16" y="0" width="3" height="34"/><rect x="20" y="0" width="1" height="34"/><rect x="24" y="0" width="3" height="34"/><rect x="29" y="0" width="3" height="34"/><rect x="35" y="0" width="1" height="34"/><rect x="39" y="0" width="2" height="34"/><rect x="44" y="0" width="1" height="34"/><rect x="48" y="0" width="3" height="34"/><rect x="52" y="0" width="1" height="34"/><rect x="54" y="0" width="1" height="34"/><rect x="56" y="0" width="3" height="34"/><rect x="61" y="0" width="1" height="34"/><rect x="64" y="0" width="2" height="34"/><rect x="69" y="0" width="1" height="34"/><rect x="71" y="0" width="3" height="34"/><rect x="77" y="0" width="3" height="34"/><rect x="81" y="0" width="2" height="34"/><rect x="85" y="0" width="1" height="34"/><rect x="88" y="0" width="1" height="34"/><rect x="92" y="0" width="2" height="34"/><rect x="95" y="0" width="3" height="34"/><rect x="101" y="0" width="1" height="34"/><rect x="104" y="0" width="1" height="34"/><rect x="106" y="0" width="1" height="34"/><rect x="108" y="0" width="3" height="34"/><rect x="112" y="0" width="1" height="34"/><rect x="115" y="0" width="2" height="34"/><rect x="119" y="0" width="1" height="34"/><rect x="122" y="0" width="3" height="34"/><rect x="127" y="0" width="1" height="34"/><rect x="131" y="0" width="3" height="34"/><rect x="135" y="0" width="1" height="34"/><rect x="139" y="0" width="1" height="34"/><rect x="142" y="0" width="1" height="34"/><rect x="145" y="0" width="2" height="34"/></g></svg><svg class="lb-qr" viewBox="0 0 71.4 71.4" aria-hidden="true"><g fill="#111"><rect x="0.0" y="0.0" width="3.4" height="3.4"/><rect x="3.4" y="0.0" width="3.4" height="3.4"/><rect x="6.8" y="0.0" width="3.4" height="3.4"/><rect x="10.2" y="0.0" width="3.4" height="3.4"/><rect x="13.6" y="0.0" width="3.4" height="3.4"/><rect x="17.0" y="0.0" width="3.4" height="3.4"/><rect x="20.4" y="0.0" width="3.4" height="3.4"/><rect x="27.2" y="0.0" width="3.4" height="3.4"/><rect x="30.6" y="0.0" width="3.4" height="3.4"/><rect x="34.0" y="0.0" width="3.4" height="3.4"/><rect x="37.4" y="0.0" width="3.4" height="3.4"/><rect x="40.8" y="0.0" width="3.4" height="3.4"/><rect x="47.6" y="0.0" width="3.4" height="3.4"/><rect x="51.0" y="0.0" width="3.4" height="3.4"/><rect x="54.4" y="0.0" width="3.4" height="3.4"/><rect x="57.8" y="0.0" width="3.4" height="3.4"/><rect x="61.2" y="0.0" width="3.4" height="3.4"/><rect x="64.6" y="0.0" width="3.4" height="3.4"/><rect x="68.0" y="0.0" width="3.4" height="3.4"/><rect x="0.0" y="3.4" width="3.4" height="3.4"/><rect x="20.4" y="3.4" width="3.4" height="3.4"/><rect x="34.0" y="3.4" width="3.4" height="3.4"/><rect x="40.8" y="3.4" width="3.4" height="3.4"/><rect x="47.6" y="3.4" width="3.4" height="3.4"/><rect x="68.0" y="3.4" width="3.4" height="3.4"/><rect x="0.0" y="6.8" width="3.4" height="3.4"/><rect x="6.8" y="6.8" width="3.4" height="3.4"/><rect x="10.2" y="6.8" width="3.4" height="3.4"/><rect x="13.6" y="6.8" width="3.4" height="3.4"/><rect x="20.4" y="6.8" width="3.4" height="3.4"/><rect x="30.6" y="6.8" width="3.4" height="3.4"/><rect x="34.0" y="6.8" width="3.4" height="3.4"/><rect x="40.8" y="6.8" width="3.4" height="3.4"/><rect x="47.6" y="6.8" width="3.4" height="3.4"/><rect x="54.4" y="6.8" width="3.4" height="3.4"/><rect x="57.8" y="6.8" width="3.4" height="3.4"/><rect x="61.2" y="6.8" width="3.4" height="3.4"/><rect x="68.0" y="6.8" width="3.4" height="3.4"/><rect x="0.0" y="10.2" width="3.4" height="3.4"/><rect x="6.8" y="10.2" width="3.4" height="3.4"/><rect x="10.2" y="10.2" width="3.4" height="3.4"/><rect x="13.6" y="10.2" width="3.4" height="3.4"/><rect x="20.4" y="10.2" width="3.4" height="3.4"/><rect x="40.8" y="10.2" width="3.4" height="3.4"/><rect x="47.6" y="10.2" width="3.4" height="3.4"/><rect x="54.4" y="10.2" width="3.4" height="3.4"/><rect x="57.8" y="10.2" width="3.4" height="3.4"/><rect x="61.2" y="10.2" width="3.4" height="3.4"/><rect x="68.0" y="10.2" width="3.4" height="3.4"/><rect x="0.0" y="13.6" width="3.4" height="3.4"/><rect x="6.8" y="13.6" width="3.4" height="3.4"/><rect x="10.2" y="13.6" width="3.4" height="3.4"/><rect x="13.6" y="13.6" width="3.4" height="3.4"/><rect x="20.4" y="13.6" width="3.4" height="3.4"/><rect x="34.0" y="13.6" width="3.4" height="3.4"/><rect x="37.4" y="13.6" width="3.4" height="3.4"/><rect x="40.8" y="13.6" width="3.4" height="3.4"/><rect x="47.6" y="13.6" width="3.4" height="3.4"/><rect x="54.4" y="13.6" width="3.4" height="3.4"/><rect x="57.8" y="13.6" width="3.4" height="3.4"/><rect x="61.2" y="13.6" width="3.4" height="3.4"/><rect x="68.0" y="13.6" width="3.4" height="3.4"/><rect x="0.0" y="17.0" width="3.4" height="3.4"/><rect x="20.4" y="17.0" width="3.4" height="3.4"/><rect x="34.0" y="17.0" width="3.4" height="3.4"/><rect x="47.6" y="17.0" width="3.4" height="3.4"/><rect x="68.0" y="17.0" width="3.4" height="3.4"/><rect x="0.0" y="20.4" width="3.4" height="3.4"/><rect x="3.4" y="20.4" width="3.4" height="3.4"/><rect x="6.8" y="20.4" width="3.4" height="3.4"/><rect x="10.2" y="20.4" width="3.4" height="3.4"/><rect x="13.6" y="20.4" width="3.4" height="3.4"/><rect x="17.0" y="20.4" width="3.4" height="3.4"/><rect x="20.4" y="20.4" width="3.4" height="3.4"/><rect x="27.2" y="20.4" width="3.4" height="3.4"/><rect x="37.4" y="20.4" width="3.4" height="3.4"/><rect x="40.8" y="20.4" width="3.4" height="3.4"/><rect x="47.6" y="20.4" width="3.4" height="3.4"/><rect x="51.0" y="20.4" width="3.4" height="3.4"/><rect x="54.4" y="20.4" width="3.4" height="3.4"/><rect x="57.8" y="20.4" width="3.4" height="3.4"/><rect x="61.2" y="20.4" width="3.4" height="3.4"/><rect x="64.6" y="20.4" width="3.4" height="3.4"/><rect x="68.0" y="20.4" width="3.4" height="3.4"/><rect x="27.2" y="23.8" width="3.4" height="3.4"/><rect x="34.0" y="23.8" width="3.4" height="3.4"/><rect x="0.0" y="27.2" width="3.4" height="3.4"/><rect x="3.4" y="27.2" width="3.4" height="3.4"/><rect x="27.2" y="27.2" width="3.4" height="3.4"/><rect x="34.0" y="27.2" width="3.4" height="3.4"/><rect x="37.4" y="27.2" width="3.4" height="3.4"/><rect x="40.8" y="27.2" width="3.4" height="3.4"/><rect x="44.2" y="27.2" width="3.4" height="3.4"/><rect x="47.6" y="27.2" width="3.4" height="3.4"/><rect x="57.8" y="27.2" width="3.4" height="3.4"/><rect x="0.0" y="30.6" width="3.4" height="3.4"/><rect x="3.4" y="30.6" width="3.4" height="3.4"/><rect x="6.8" y="30.6" width="3.4" height="3.4"/><rect x="10.2" y="30.6" width="3.4" height="3.4"/><rect x="13.6" y="30.6" width="3.4" height="3.4"/><rect x="27.2" y="30.6" width="3.4" height="3.4"/><rect x="37.4" y="30.6" width="3.4" height="3.4"/><rect x="54.4" y="30.6" width="3.4" height="3.4"/><rect x="57.8" y="30.6" width="3.4" height="3.4"/><rect x="64.6" y="30.6" width="3.4" height="3.4"/><rect x="3.4" y="34.0" width="3.4" height="3.4"/><rect x="6.8" y="34.0" width="3.4" height="3.4"/><rect x="17.0" y="34.0" width="3.4" height="3.4"/><rect x="20.4" y="34.0" width="3.4" height="3.4"/><rect x="23.8" y="34.0" width="3.4" height="3.4"/><rect x="34.0" y="34.0" width="3.4" height="3.4"/><rect x="47.6" y="34.0" width="3.4" height="3.4"/><rect x="54.4" y="34.0" width="3.4" height="3.4"/><rect x="57.8" y="34.0" width="3.4" height="3.4"/><rect x="3.4" y="37.4" width="3.4" height="3.4"/><rect x="13.6" y="37.4" width="3.4" height="3.4"/><rect x="17.0" y="37.4" width="3.4" height="3.4"/><rect x="20.4" y="37.4" width="3.4" height="3.4"/><rect x="23.8" y="37.4" width="3.4" height="3.4"/><rect x="30.6" y="37.4" width="3.4" height="3.4"/><rect x="34.0" y="37.4" width="3.4" height="3.4"/><rect x="37.4" y="37.4" width="3.4" height="3.4"/><rect x="44.2" y="37.4" width="3.4" height="3.4"/><rect x="47.6" y="37.4" width="3.4" height="3.4"/><rect x="57.8" y="37.4" width="3.4" height="3.4"/><rect x="3.4" y="40.8" width="3.4" height="3.4"/><rect x="6.8" y="40.8" width="3.4" height="3.4"/><rect x="10.2" y="40.8" width="3.4" height="3.4"/><rect x="13.6" y="40.8" width="3.4" height="3.4"/><rect x="20.4" y="40.8" width="3.4" height="3.4"/><rect x="23.8" y="40.8" width="3.4" height="3.4"/><rect x="34.0" y="40.8" width="3.4" height="3.4"/><rect x="47.6" y="40.8" width="3.4" height="3.4"/><rect x="54.4" y="40.8" width="3.4" height="3.4"/><rect x="57.8" y="40.8" width="3.4" height="3.4"/><rect x="30.6" y="44.2" width="3.4" height="3.4"/><rect x="47.6" y="44.2" width="3.4" height="3.4"/><rect x="61.2" y="44.2" width="3.4" height="3.4"/><rect x="64.6" y="44.2" width="3.4" height="3.4"/><rect x="68.0" y="44.2" width="3.4" height="3.4"/><rect x="0.0" y="47.6" width="3.4" height="3.4"/><rect x="3.4" y="47.6" width="3.4" height="3.4"/><rect x="6.8" y="47.6" width="3.4" height="3.4"/><rect x="10.2" y="47.6" width="3.4" height="3.4"/><rect x="13.6" y="47.6" width="3.4" height="3.4"/><rect x="17.0" y="47.6" width="3.4" height="3.4"/><rect x="20.4" y="47.6" width="3.4" height="3.4"/><rect x="30.6" y="47.6" width="3.4" height="3.4"/><rect x="40.8" y="47.6" width="3.4" height="3.4"/><rect x="47.6" y="47.6" width="3.4" height="3.4"/><rect x="61.2" y="47.6" width="3.4" height="3.4"/><rect x="64.6" y="47.6" width="3.4" height="3.4"/><rect x="0.0" y="51.0" width="3.4" height="3.4"/><rect x="20.4" y="51.0" width="3.4" height="3.4"/><rect x="27.2" y="51.0" width="3.4" height="3.4"/><rect x="37.4" y="51.0" width="3.4" height="3.4"/><rect x="51.0" y="51.0" width="3.4" height="3.4"/><rect x="54.4" y="51.0" width="3.4" height="3.4"/><rect x="57.8" y="51.0" width="3.4" height="3.4"/><rect x="64.6" y="51.0" width="3.4" height="3.4"/><rect x="68.0" y="51.0" width="3.4" height="3.4"/><rect x="0.0" y="54.4" width="3.4" height="3.4"/><rect x="6.8" y="54.4" width="3.4" height="3.4"/><rect x="10.2" y="54.4" width="3.4" height="3.4"/><rect x="13.6" y="54.4" width="3.4" height="3.4"/><rect x="20.4" y="54.4" width="3.4" height="3.4"/><rect x="27.2" y="54.4" width="3.4" height="3.4"/><rect x="30.6" y="54.4" width="3.4" height="3.4"/><rect x="37.4" y="54.4" width="3.4" height="3.4"/><rect x="40.8" y="54.4" width="3.4" height="3.4"/><rect x="54.4" y="54.4" width="3.4" height="3.4"/><rect x="61.2" y="54.4" width="3.4" height="3.4"/><rect x="68.0" y="54.4" width="3.4" height="3.4"/><rect x="0.0" y="57.8" width="3.4" height="3.4"/><rect x="6.8" y="57.8" width="3.4" height="3.4"/><rect x="10.2" y="57.8" width="3.4" height="3.4"/><rect x="13.6" y="57.8" width="3.4" height="3.4"/><rect x="20.4" y="57.8" width="3.4" height="3.4"/><rect x="27.2" y="57.8" width="3.4" height="3.4"/><rect x="30.6" y="57.8" width="3.4" height="3.4"/><rect x="34.0" y="57.8" width="3.4" height="3.4"/><rect x="37.4" y="57.8" width="3.4" height="3.4"/><rect x="40.8" y="57.8" width="3.4" height="3.4"/><rect x="47.6" y="57.8" width="3.4" height="3.4"/><rect x="54.4" y="57.8" width="3.4" height="3.4"/><rect x="57.8" y="57.8" width="3.4" height="3.4"/><rect x="61.2" y="57.8" width="3.4" height="3.4"/><rect x="64.6" y="57.8" width="3.4" height="3.4"/><rect x="68.0" y="57.8" width="3.4" height="3.4"/><rect x="0.0" y="61.2" width="3.4" height="3.4"/><rect x="6.8" y="61.2" width="3.4" height="3.4"/><rect x="10.2" y="61.2" width="3.4" height="3.4"/><rect x="13.6" y="61.2" width="3.4" height="3.4"/><rect x="20.4" y="61.2" width="3.4" height="3.4"/><rect x="34.0" y="61.2" width="3.4" height="3.4"/><rect x="47.6" y="61.2" width="3.4" height="3.4"/><rect x="61.2" y="61.2" width="3.4" height="3.4"/><rect x="64.6" y="61.2" width="3.4" height="3.4"/><rect x="68.0" y="61.2" width="3.4" height="3.4"/><rect x="0.0" y="64.6" width="3.4" height="3.4"/><rect x="20.4" y="64.6" width="3.4" height="3.4"/><rect x="30.6" y="64.6" width="3.4" height="3.4"/><rect x="34.0" y="64.6" width="3.4" height="3.4"/><rect x="37.4" y="64.6" width="3.4" height="3.4"/><rect x="40.8" y="64.6" width="3.4" height="3.4"/><rect x="44.2" y="64.6" width="3.4" height="3.4"/><rect x="47.6" y="64.6" width="3.4" height="3.4"/><rect x="51.0" y="64.6" width="3.4" height="3.4"/><rect x="64.6" y="64.6" width="3.4" height="3.4"/><rect x="0.0" y="68.0" width="3.4" height="3.4"/><rect x="3.4" y="68.0" width="3.4" height="3.4"/><rect x="6.8" y="68.0" width="3.4" height="3.4"/><rect x="10.2" y="68.0" width="3.4" height="3.4"/><rect x="13.6" y="68.0" width="3.4" height="3.4"/><rect x="17.0" y="68.0" width="3.4" height="3.4"/><rect x="20.4" y="68.0" width="3.4" height="3.4"/><rect x="27.2" y="68.0" width="3.4" height="3.4"/><rect x="30.6" y="68.0" width="3.4" height="3.4"/><rect x="34.0" y="68.0" width="3.4" height="3.4"/><rect x="37.4" y="68.0" width="3.4" height="3.4"/><rect x="40.8" y="68.0" width="3.4" height="3.4"/><rect x="44.2" y="68.0" width="3.4" height="3.4"/><rect x="47.6" y="68.0" width="3.4" height="3.4"/><rect x="51.0" y="68.0" width="3.4" height="3.4"/></g></svg></div>
+              </div>
+              <div class="card" style="position:absolute;left:312px;top:0;width:328px">
+                <div class="panel-h"><h5>Scan trail, FG-1037-04</h5><span>4 scans</span></div>
+                <ul class="trail">
+                  <li><span>10:32</span><div><b>Label printed at Line 1</b><small>Gary K., cost centre Extrusion</small></div></li>
+                  <li><span>10:40</span><div><b>Scanned into finished goods</b><small>Lisa K., Stores</small></div></li>
+                  <li class="bad" id="s-bad"><span>14:05</span><div><b>Stopped: not on SO-2631</b><small>Wrong item for this order, nothing booked</small></div></li>
+                  <li><span>14:06</span><div><b>Scanned onto SO-2624</b><small>Lisa K., Dispatch</small></div></li>
+                </ul>
+              </div>
+              <div class="callouts">
+                <svg viewBox="0 0 640 330"></svg>
+                <div class="co-note on-light" style="left:20px;top:250px;width:250px" data-target="s-lbl" data-at="bottom"><b>1</b><span>Printed at the station that made it</span></div>
+                <div class="co-note on-light" style="left:330px;top:268px;width:300px" data-target="s-bad" data-at="bottom"><b>2</b><span>A wrong scan is stopped before it's booked</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature flip">
         <div>
           <h3>Trace any batch in seconds</h3>
           <p>When a customer rings about a delivery, follow the finished lot back to the supplier batches it was made from, and forward to everyone who received it. No digging through delivery notes.</p>
@@ -778,7 +830,7 @@
         </div>
       </div>
 
-      <div class="feature flip">
+      <div class="feature">
         <div>
           <h3>Tooling that warns you first</h3>
           <p>Every die, mould and fixture keeps its own log of runs, cleans and repairs. Set a maintenance point and the system flags it before the job that needs it, not halfway through the run.</p>
@@ -811,7 +863,7 @@
         </div>
       </div>
 
-      <div class="feature">
+      <div class="feature flip">
         <div>
           <h3>Mistakes put right, never rubbed out</h3>
           <p>Every stock movement is written once and kept. A mis-keyed delivery is corrected with a reversing entry, so the record stays complete and you can always see who did what, and when.</p>
@@ -909,6 +961,7 @@
         <div><dt>Corrections</dt><dd>Reversing entries, linked to the original, with the reason kept. Nothing is edited or deleted.</dd></div>
         <div><dt>Traceability</dt><dd>A lot on every movement, from supplier batch to customer delivery.</dd></div>
         <div><dt>Recipes and routings</dt><dd>Versioned. Each job is pinned to the version it ran with.</dd></div>
+        <div><dt>Labels and scanning</dt><dd>A label printed at each work station and scanned at the next. Nothing is typed twice, and every scan is recorded against the job and cost centre.</dd></div>
         <div><dt>Shop floor</dt><dd>Touch screens at each line or machine, one job at a time, with operator sign-in by PIN.</dd></div>
         <div><dt>Access</dt><dd>Roles for the office, stations and viewers. No per-user fees.</dd></div>
         <div><dt>Hosting</dt><dd>London, with daily backups.</dd></div>
@@ -1046,12 +1099,13 @@
         <div class="plan">
           <h3>Add-ons</h3><p class="for">When you're ready for more</p>
           <div class="amt">£1,500 <small>each to set up</small></div><div class="then">then £45 a month each</div>
-          <ul><li>Job costing and margins</li><li>Purchasing, linked to Xero or QuickBooks</li><li>Customer portal for order status and certificates</li><li>Label and barcode printing</li></ul>
+          <ul><li>Job costing and margins</li><li>Purchasing, linked to Xero or QuickBooks</li><li>Customer portal for order status and certificates</li><li>Scan-and-label tracking at every station</li></ul>
         </div>
       </div>
       <div class="includes">
         <div><b>Every plan includes</b><span>Secure hosting in London, daily backups, updates, and support by phone and email with a reply the same working day.</span></div>
         <div><b>No lock-in</b><span>Twelve months to start, then month to month. Your data is yours: export it any time, or take a full copy if you leave.</span></div>
+        <div><b>Station hardware</b><span>Tablets, scanners and label printers supplied and set up if you want them, quoted after the health check.</span></div>
         <div><b>Fixed prices</b><span>Set-up is agreed in writing before any work starts. No surprise invoices.</span></div>
       </div>
       <p class="vat">Prices exclude VAT. Larger or unusual set-ups are quoted after a health check.</p>

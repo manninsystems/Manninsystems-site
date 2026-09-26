@@ -342,6 +342,23 @@
   .die-log li > span:first-child { color: #5A6A76; }
   .die-log .next { background: #FAEFD3; margin: 0 -18px; padding: 9px 18px; border: 0; }
 
+  /* Label and scan trail */
+  .label { background: #fff; border-radius: 8px; padding: 12px 14px 12px; font-family: Arial, Helvetica, sans-serif; color: #111; box-shadow: var(--shadow), 0 0 0 1px rgba(0, 0, 0, 0.06); }
+  .lb-top { display: flex; justify-content: space-between; font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em; border-bottom: 1.5px solid #111; padding-bottom: 5px; }
+  .lb-id { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; margin-top: 6px; }
+  .lb-what { font-size: 12px; margin-top: 1px; }
+  .lb-row { display: grid; grid-template-columns: 0.8fr 0.9fr 1fr 1.3fr; gap: 6px; margin: 8px 0; padding: 6px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; font-size: 11.5px; font-weight: 700; }
+  .lb-row small { display: block; font-size: 8.5px; font-weight: 400; color: #444; }
+  .lb-codes { display: flex; gap: 12px; align-items: center; }
+  .lb-bc { flex: 1; height: 44px; }
+  .lb-qr { width: 60px; height: 60px; flex: none; }
+  .trail { list-style: none; margin: 0; padding: 0; }
+  .trail li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 8px; padding: 9px 13px; border-bottom: 1px solid #E3E8EA; font-size: 12px; }
+  .trail li:last-child { border-bottom: 0; }
+  .trail li > span { color: #5A6A76; }
+  .trail b { display: block; font-weight: 600; }
+  .trail li.bad { background: #FBF3F0; }
+  .trail li.bad b { color: #B04832; }
   /* Ledger */
   .led { overflow: hidden; }
   .led table { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -698,7 +715,7 @@
   <section class="section alt">
     <div class="wrap">
       <div class="section-head"><h2>What your system can do</h2><p class="intro">Built around how your shop works, using your names for your products and processes.</p></div>
-      <div class="covers"><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="1"/><path d="M4 16h16M13 16v4.5"/><path d="M8 7h8M8 10h5"/></svg><h3>Jobs by drawing and revision</h3><p>Each job carries its drawings and revision, so the shop floor always builds the right one.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h4v4H4zM10 13h4v4h-4zM16 7h4v4h-4z"/><path d="M8 9h8M12 13v-4"/></svg><h3>Progress at each stage</h3><p>Cut, bend, weld and finish booked from a screen at each area, so the office sees where every job is.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="3.5" width="15" height="17" rx="1"/><path d="M8 8h8M8 11.5h8"/><circle cx="12" cy="16" r="2"/></svg><h3>Material with certificates</h3><p>Heat numbers and certs linked to the jobs that used them, ready for the customer.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8h17v8h-17z"/><path d="M14 8v8"/><path d="M16 10.5h2.5M16 13.5h2.5"/></svg><h3>Offcut stock</h3><p>Usable offcuts booked back with their size and grade, and offered up before new stock is cut.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12h11M11 8l4 4-4 4"/><path d="M17 5v14"/></svg><h3>Subcontract tracking</h3><p>What has gone out for galvanising or coating, where, and when it is due back.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.5 8.5c-.6-1-1.5-1.4-2.6-1.4-1.6 0-2.7 1-2.7 2.3 0 3.2 5.6 1.9 5.6 5 0 1.3-1.2 2.4-2.9 2.4-1.2 0-2.3-.5-2.9-1.6M12 5.5v1.6M12 16.8v1.7"/></svg><h3>Job costing</h3><p>Hours and material per job against the quote, so you learn which work pays.</p></div></div>
+      <div class="covers"><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="1"/><path d="M4 16h16M13 16v4.5"/><path d="M8 7h8M8 10h5"/></svg><h3>Jobs by drawing and revision</h3><p>Each job carries its drawings and revision, so the shop floor always builds the right one.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h4v4H4zM10 13h4v4h-4zM16 7h4v4h-4z"/><path d="M8 9h8M12 13v-4"/></svg><h3>Progress at each stage</h3><p>Cut, bend, weld and finish booked from a screen at each area, so the office sees where every job is.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="3.5" width="15" height="17" rx="1"/><path d="M8 8h8M8 11.5h8"/><circle cx="12" cy="16" r="2"/></svg><h3>Material with certificates</h3><p>Heat numbers and certs linked to the jobs that used them, ready for the customer.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8h17v8h-17z"/><path d="M14 8v8"/><path d="M16 10.5h2.5M16 13.5h2.5"/></svg><h3>Offcut stock</h3><p>Usable offcuts booked back with their size and grade, and offered up before new stock is cut.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12h11M11 8l4 4-4 4"/><path d="M17 5v14"/></svg><h3>Subcontract tracking</h3><p>What has gone out for galvanising or coating, where, and when it is due back.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.5 8.5c-.6-1-1.5-1.4-2.6-1.4-1.6 0-2.7 1-2.7 2.3 0 3.2 5.6 1.9 5.6 5 0 1.3-1.2 2.4-2.9 2.4-1.2 0-2.3-.5-2.9-1.6M12 5.5v1.6M12 16.8v1.7"/></svg><h3>Job costing</h3><p>Hours and material per job against the quote, so you learn which work pays.</p></div><div class="cover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6v12M7 6v12M10 6v12M14 6v12M16 6v12M20 6v12"/></svg><h3>Scan and label at every station</h3><p>A label printed for each part or stillage at every step, scanned at the next, so progress and costs book themselves.</p></div></div>
     </div>
   </section>
 
